@@ -185,6 +185,87 @@ export const CONFIRMED_BOOKINGS = [
   }
 ];
 
+export const DOG_FRIENDLY_2BR_ALTERNATIVES = [
+  {
+    id: "alt-homewood-airport",
+    rank: "#1 Zero-Move Pick",
+    name: "Homewood Suites by Hilton Las Vegas Airport (Stay Where You Already Are!)",
+    address: "230 Hidden Well Rd, Las Vegas, NV 89119",
+    driveToWestVegas: "12 mins to Durango Resort • 17 mins to Downtown Summerlin (via I-215 W)",
+    suiteLayout: "Two-Bedroom / Two-Bath Suite (1 King + 2 Queens + Sofa Bed + Full Kitchen)",
+    petPolicy: "$50 total (1–4 nights) or $75 total (5+ nights) — only +$25 extra over your Night 1 fee! Up to 2 dogs ≤100 lbs.",
+    extraFees: "$0 Resort Fee • FREE Self-Parking (2 cars) • FREE Daily Hot Breakfast",
+    estNightlyRate: "~$240–$360/night",
+    whyPick: "Zero Thursday hotel switch! Move straight from your Night 1 Studio into a 2BR/2BA Suite in the same building, save on second pet fees, and get free parking for both your SUV and your brother's car.",
+    url: "https://www.hilton.com/en/hotels/lasafhw-homewood-suites-las-vegas-airport/"
+  },
+  {
+    id: "alt-residence-stadium",
+    rank: "#2 Closest Modern 2BR to West Vegas",
+    name: "Residence Inn by Marriott Las Vegas Stadium Area",
+    address: "5875 Dean Martin Dr, Las Vegas, NV 89118",
+    driveToWestVegas: "11 mins to Durango Resort • 15 mins to Downtown Summerlin",
+    suiteLayout: "Two-Bedroom / Two-Bath Suite (Full Kitchen, Separate Living Area)",
+    petPolicy: "$100 flat fee per stay (up to 2 dogs ≤75 lbs).",
+    extraFees: "$0 Resort Fee • ~$20/day parking • FREE Daily Hot Breakfast",
+    estNightlyRate: "~$250–$380/night",
+    whyPick: "Newer, smoke-free, non-gaming property right by the I-15 / I-215 West ramp—super fast straight shot west to Summerlin and Spring Valley.",
+    url: "https://www.marriott.com/en-us/hotels/lasra-residence-inn-las-vegas-stadium-area/overview/"
+  },
+  {
+    id: "alt-homewood-city-center",
+    rank: "#3 Best Value Pet Fee (West of I-15)",
+    name: "Homewood Suites by Hilton Las Vegas City Center",
+    address: "4625 Dean Martin Dr, Las Vegas, NV 89103",
+    driveToWestVegas: "13 mins to Peace Canyon / Spring Valley • 16 mins to Downtown Summerlin",
+    suiteLayout: "Two-Bedroom / Two-Bath Suite (Full Kitchen, Living Room, Sofa Sleeper)",
+    petPolicy: "$75 flat fee per stay (up to 2 pets ≤75 lbs).",
+    extraFees: "$0 Resort Fee • $20/day garage parking • FREE Daily Hot Breakfast",
+    estNightlyRate: "~$220–$350/night",
+    whyPick: "Lowest flat pet fee ($75) outside your Night 1 hotel, spacious residential 2BR layout, and easy straight shot west down Flamingo or Tropicana to your sisters' side of town.",
+    url: "https://www.hilton.com/en/hotels/lasccwh-homewood-suites-las-vegas-city-center/"
+  },
+  {
+    id: "alt-staybridge-stadium",
+    rank: "#4 Condo-Style Tower w/ Balcony Option",
+    name: "Staybridge Suites Las Vegas – Stadium District (by IHG)",
+    address: "5735 Dean Martin Dr, Las Vegas, NV 89118",
+    driveToWestVegas: "11 mins to Durango Resort • 15 mins to Downtown Summerlin",
+    suiteLayout: "Two-Bedroom / Two-Bath Apartment Suite (Full Kitchen + Optional Balcony + Free Laundry)",
+    petPolicy: "$75 flat fee (1–6 nights) • Dogs up to 30 lbs (perfect for a Pomeranian; crate/accompanied rule applies).",
+    extraFees: "~$0–$25 amenity fee (varies by rate) • $20/day guest parking • FREE Hot Breakfast & Free Guest Laundry",
+    estNightlyRate: "~$240–$370/night",
+    whyPick: "Feels closest to a modern high-rise condo with free on-site laundry machines (huge with a 2-year-old!) and optional private balconies.",
+    url: "https://www.ihg.com/staybridge/hotels/us/en/las-vegas/lasst/hoteldetail"
+  },
+  {
+    id: "alt-residence-airport-south",
+    rank: "#5 Quiet South Beltway / Town Square Pick",
+    name: "Residence Inn Las Vegas Airport (South Las Vegas Blvd)",
+    address: "7690 S Las Vegas Blvd, Las Vegas, NV 89123",
+    driveToWestVegas: "12 mins to Durango Resort • 16 mins to Summerlin South",
+    suiteLayout: "Two-Bedroom / Two-Bath Suite (Full Kitchen, Fireplace in Select Suites)",
+    petPolicy: "$150 flat fee per stay • Max 25 lbs per pet (easy for a 4–7 lb Pomeranian!).",
+    extraFees: "$0 Resort Fee • FREE Hot Breakfast • Walkable to Town Square & PopStroke!",
+    estNightlyRate: "~$230–$350/night",
+    whyPick: "Low-rise residential village layout (1st-floor suites open right onto grassy dog-walking paths!) across from Town Square.",
+    url: "https://www.marriott.com/en-us/hotels/lasap-residence-inn-las-vegas-airport/overview/"
+  },
+  {
+    id: "alt-trump-penthouse",
+    rank: "#6 Luxury Non-Gaming Upgrade (Unattended Dogs Allowed!)",
+    name: "Trump International Hotel Las Vegas — 2BR Penthouse Suite",
+    address: "2000 Fashion Show Dr, Las Vegas, NV 89109",
+    driveToWestVegas: "17 mins to Downtown Summerlin",
+    suiteLayout: "Luxury Two-Bedroom Penthouse Suite (Sub-Zero/Wolf Full Kitchen, Dining Room, 2.5 Baths)",
+    petPolicy: "$125 flat fee per stay ('Trump Pets' ≤25 lbs — includes dog bed/bowls AND allows well-behaved dogs left unattended in suite!)",
+    extraFees: "Resort fee applies • 100% Smoke-Free & Non-Gaming",
+    estNightlyRate: "~$450–$700+/night",
+    whyPick: "Unlike extended-stay hotels (which require crating/accompanying pets) or Vdara ($200/night pet fee!), this allows your Pom to relax unattended in the suite while you visit Enchant Christmas or Discovery Museum.",
+    url: "https://www.trumphotels.com/las-vegas"
+  }
+];
+
 export const EMAIL_COMMS = [
   {
     id: "1a1c8bf20f1f8222",

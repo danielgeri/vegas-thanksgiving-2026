@@ -1,6 +1,7 @@
 import {
   TRIP_META,
   CONFIRMED_BOOKINGS,
+  DOG_FRIENDLY_2BR_ALTERNATIVES,
   EMAIL_COMMS,
   ITINERARY_DAYS,
   RESTAURANTS,
@@ -277,6 +278,37 @@ function renderBookings() {
       </article>
     `;
   }).join("");
+
+  // Dog-Friendly 2BR Suite Substitutes
+  const petHotelsEl = document.getElementById("pet-hotels-grid");
+  if (petHotelsEl) {
+    petHotelsEl.innerHTML = DOG_FRIENDLY_2BR_ALTERNATIVES.map(
+      (h) => `
+      <article class="card">
+        <header>
+          <div class="card-badges">
+            <span class="badge badge-emerald">${escapeHtml(h.rank)}</span>
+            <span class="badge badge-accent">${escapeHtml(h.estNightlyRate)}</span>
+          </div>
+          <h3>${escapeHtml(h.name)}</h3>
+          <p class="stat-meta">📍 ${escapeHtml(h.address)} • 🚗 ${escapeHtml(h.driveToWestVegas)}</p>
+        </header>
+        <div class="card-content">
+          <p><strong>Suite Layout:</strong> ${escapeHtml(h.suiteLayout)}</p>
+          <p><strong>🐾 Pet Policy:</strong> ${escapeHtml(h.petPolicy)}</p>
+          <p><strong>Perks &amp; Fees:</strong> ${escapeHtml(h.extraFees)}</p>
+          <p class="stat-meta">${escapeHtml(h.whyPick)}</p>
+        </div>
+        <footer>
+          <span class="badge">🐾 Pom Approved</span>
+          <a class="btn btn-sm btn-primary" href="${escapeHtml(h.url)}" target="_blank" rel="noopener">
+            Check Nov 26–30 Rates ↗
+          </a>
+        </footer>
+      </article>
+    `
+    ).join("");
+  }
 
   // Travelers Roster
   const rosterEl = document.getElementById("travelers-roster");
