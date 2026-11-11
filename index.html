@@ -1,0 +1,290 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Vegas Thanksgiving 2026 — Geri Family &amp; Group Trip Hub</title>
+  <meta name="description" content="Offline-ready Progressive Web App for the Geri Family Thanksgiving 2026 trip to Las Vegas (Nov 25–30, 2026): flights, hotels, itinerary, large-group restaurants, and events.">
+  <meta name="theme-color" content="#0c0f17">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Vegas '26">
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="icon" type="image/svg+xml" href="./icons/icon.svg">
+  <link rel="apple-touch-icon" href="./icons/icon-192.png">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <!-- Hero Header -->
+    <header class="hero">
+      <div class="hero-top">
+        <div>
+          <span class="eyebrow">🦃 Offline-Ready Trip Companion PWA • Synced from Gmail</span>
+          <h1>Geri Family &amp; Friends — Vegas Thanksgiving 2026</h1>
+          <p class="hero-subtitle">
+            Wednesday, Nov 25 – Monday, Nov 30, 2026 • SFO ⇄ LAS • Summerlin South &amp; The Strip
+          </p>
+        </div>
+        <div class="hero-actions">
+          <button type="button" class="btn btn-primary" id="export-all-ics-btn">
+            📅 Export All to Calendar (.ics)
+          </button>
+          <button type="button" class="btn" id="install-pwa-btn">
+            📲 Install App
+          </button>
+          <button type="button" class="btn" id="theme-toggle-btn" aria-label="Toggle light or dark theme">
+            🌗 Theme
+          </button>
+        </div>
+      </div>
+
+      <div class="quick-strip">
+        <div class="stat-pill">
+          <span class="stat-label">Countdown</span>
+          <span class="stat-value" id="countdown-value">Calculating…</span>
+          <span class="stat-meta" id="countdown-meta">Southwest WN #2386 • Nov 25 @ 5:20 PM</span>
+        </div>
+        <div class="stat-pill">
+          <span class="stat-label">Flights (SFO ⇄ LAS)</span>
+          <span class="stat-value">WN #CACD5X • UA #L29ERJ</span>
+          <span class="stat-meta">Nov 25 (5:20 PM) • Nov 30 (1:31 PM)</span>
+        </div>
+        <div class="stat-pill">
+          <span class="stat-label">Night 1 (Wed, Nov 25)</span>
+          <span class="stat-value">Homewood Suites Airport</span>
+          <span class="stat-meta">Expedia #73585813376033 • 230 Hidden Well Rd</span>
+        </div>
+        <div class="stat-pill">
+          <span class="stat-label">Main Basecamp (Nov 26–30)</span>
+          <span class="stat-value">The Cliffs at Peace Canyon</span>
+          <span class="stat-meta">Booking #5477904180 • 2BR Unit • Summerlin South</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Tabbed Interface (modern-web-guidance compliant) -->
+    <div class="tabs-wrapper">
+      <div class="tablist-scroller" focusgroup="tablist nomemory" aria-label="Vegas Thanksgiving Trip Sections">
+        <button type="button" id="tab-bookings" aria-selected="true" focusgroupstart>
+          ✈️ Confirmed Bookings (4)
+        </button>
+        <button type="button" id="tab-itinerary" aria-selected="false">
+          🗓️ 6-Day Itinerary
+        </button>
+        <button type="button" id="tab-restaurants" aria-selected="false">
+          🍽️ Large-Group Restaurants (16)
+        </button>
+        <button type="button" id="tab-events" aria-selected="false">
+          🎟️ Events &amp; Things to Do (19)
+        </button>
+        <button type="button" id="tab-checklist" aria-selected="false">
+          ✅ Action &amp; Packing List
+        </button>
+        <button type="button" id="tab-emails" aria-selected="false">
+          ✉️ Email Comms Log (11)
+        </button>
+      </div>
+
+      <main class="tabpanels-grid">
+        <!-- Panel 1: Confirmed Bookings -->
+        <div role="tabpanel" aria-labelledby="tab-bookings">
+          <div class="panel-inner">
+            <div class="section-header">
+              <div>
+                <h2>Confirmed Reservations &amp; Flight Details</h2>
+                <p>All confirmation codes, ticket numbers, seat assignments, and policies extracted from Gmail.</p>
+              </div>
+            </div>
+            <div class="cards-grid-wide" id="bookings-grid"></div>
+
+            <div class="section-header" style="margin-top:2rem;">
+              <div>
+                <h2>Family &amp; Group Roster</h2>
+                <p>Travelers and family members referenced across your booking and trip threads.</p>
+              </div>
+            </div>
+            <div class="cards-grid" id="travelers-roster"></div>
+          </div>
+        </div>
+
+        <!-- Panel 2: 6-Day Itinerary -->
+        <div role="tabpanel" aria-labelledby="tab-itinerary" hidden="until-found">
+          <div class="panel-inner">
+            <div class="section-header">
+              <div>
+                <h2>Day-by-Day Group Itinerary (Nov 25 – Nov 30, 2026)</h2>
+                <p>Locked-in flight &amp; hotel windows paired with curated group plans around Summerlin &amp; The Strip.</p>
+              </div>
+            </div>
+            <div id="itinerary-container"></div>
+          </div>
+        </div>
+
+        <!-- Panel 3: Large-Group Restaurants -->
+        <div role="tabpanel" aria-labelledby="tab-restaurants" hidden="until-found">
+          <div class="panel-inner">
+            <div class="section-header">
+              <div>
+                <h2>Large-Group &amp; Thanksgiving Restaurants Guide</h2>
+                <p>Curated for 6–20+ guests with drive times from <strong>The Cliffs at Peace Canyon</strong> (4550 S Grand Canyon Dr).</p>
+              </div>
+            </div>
+
+            <div class="filter-bar" role="region" aria-label="Restaurant filters">
+              <input
+                type="search"
+                id="rest-search-input"
+                class="search-input"
+                placeholder="Search cuisine, dish (e.g. turkey, wagyu, hot pot, dumplings)…"
+                aria-label="Search restaurants"
+              >
+              <select id="rest-zone-select" class="btn" aria-label="Filter by neighborhood">
+                <option value="all">All Neighborhoods (16)</option>
+                <option value="West Vegas / Near Resort">West Vegas / Near Resort (7–12 mins)</option>
+                <option value="Chinatown (Spring Mountain Rd)">Chinatown / Spring Mountain Rd (14 mins)</option>
+                <option value="The Strip">The Strip (18–20 mins)</option>
+              </select>
+              <button type="button" class="filter-chip" id="chip-thanksgiving" aria-pressed="false">
+                🦃 Thanksgiving Open
+              </button>
+              <button type="button" class="filter-chip" id="chip-kids" aria-pressed="false">
+                👶 Kid Friendly
+              </button>
+              <button type="button" class="filter-chip" id="chip-favs" aria-pressed="false">
+                ★ Saved Picks
+              </button>
+            </div>
+
+            <div class="cards-grid" id="restaurants-grid"></div>
+          </div>
+        </div>
+
+        <!-- Panel 4: Events & Things to Do -->
+        <div role="tabpanel" aria-labelledby="tab-events" hidden="until-found">
+          <div class="panel-inner">
+            <div class="section-header">
+              <div>
+                <h2>Thanksgiving Week 2026 Live Events &amp; Shows (Nov 25–30)</h2>
+                <p>Verified concerts, Sphere experiences, holiday light mazes, and NCAA/college sports during your stay.</p>
+              </div>
+              <select id="event-cat-select" class="btn" aria-label="Filter events by category">
+                <option value="all">All Event Categories (10)</option>
+                <option value="Holiday & Family">Holiday &amp; Family Lights</option>
+                <option value="Immersive & Family">Sphere &amp; Immersive</option>
+                <option value="Headliner Concert">Headliner Concerts</option>
+                <option value="Live Sports">Live Sports (NCAA &amp; Football)</option>
+                <option value="Strip Production">Cirque &amp; Strip Shows</option>
+              </select>
+            </div>
+
+            <div class="cards-grid" id="events-grid"></div>
+
+            <div class="section-header" style="margin-top:2.25rem;">
+              <div>
+                <h2>Best Group &amp; Multi-Generational Things to Do</h2>
+                <p>Handpicked for a mix of adults, kids (Kayden), and infant/stroller access (Leo), sorted by proximity to your resort.</p>
+              </div>
+            </div>
+            <div class="cards-grid" id="activities-grid"></div>
+          </div>
+        </div>
+
+        <!-- Panel 5: Checklist -->
+        <div role="tabpanel" aria-labelledby="tab-checklist" hidden="until-found">
+          <div class="panel-inner">
+            <div class="section-header">
+              <div>
+                <h2>Trip Action Items &amp; Packing Checklist</h2>
+                <p>Derived from gaps and policies in your booking emails (saved automatically on your device).</p>
+              </div>
+              <span class="badge badge-emerald" id="checklist-progress">0 of 10 completed</span>
+            </div>
+
+            <form id="add-check-form" class="filter-bar">
+              <input
+                type="text"
+                id="new-check-input"
+                class="search-input"
+                placeholder="Add a custom group task or packing item…"
+                aria-label="New checklist task"
+              >
+              <button type="submit" class="btn btn-primary">+ Add Task</button>
+            </form>
+
+            <div class="checklist-group" id="checklist-container"></div>
+          </div>
+        </div>
+
+        <!-- Panel 6: Email Comms Audit Log -->
+        <div role="tabpanel" aria-labelledby="tab-emails" hidden="until-found">
+          <div class="panel-inner">
+            <div class="section-header">
+              <div>
+                <h2>Gmail Communications Audit Log</h2>
+                <p>Complete record of all Vegas &amp; Thanksgiving travel emails found in <code>danielgeri@gmail.com</code>.</p>
+              </div>
+            </div>
+            <div class="cards-grid" id="emails-grid"></div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <!-- Native Modal Dialog: Add Custom Plan to Itinerary -->
+  <dialog id="add-plan-dialog" aria-labelledby="add-plan-title" closedby="any">
+    <h2 id="add-plan-title">Add Group Plan to Itinerary</h2>
+    <form id="add-plan-form" method="dialog" class="form-grid">
+      <label>
+        Day
+        <select id="plan-day-input">
+          <option value="day-1">Wed, Nov 25 (Arrival)</option>
+          <option value="day-2">Thu, Nov 26 (Thanksgiving Day)</option>
+          <option value="day-3">Fri, Nov 27 (Black Friday)</option>
+          <option value="day-4">Sat, Nov 28 (Saturday)</option>
+          <option value="day-5">Sun, Nov 29 (Sunday)</option>
+          <option value="day-6">Mon, Nov 30 (Departure)</option>
+        </select>
+      </label>
+      <label>
+        Time
+        <input type="text" id="plan-time-input" placeholder="e.g. 6:30 PM" autofocus>
+      </label>
+      <label>
+        Activity / Reservation Title
+        <input type="text" id="plan-title-input" placeholder="e.g. Dinner at Summer House Durango">
+      </label>
+      <label>
+        Location / Address
+        <input type="text" id="plan-loc-input" placeholder="e.g. 6915 S Durango Dr">
+      </label>
+      <label>
+        Notes / Confirmation #
+        <textarea id="plan-note-input" rows="2" placeholder="Optional notes for the group…"></textarea>
+      </label>
+      <div class="dialog-actions">
+        <button type="submit" value="cancel" class="btn">Cancel</button>
+        <button type="submit" value="save" class="btn btn-primary">Save Plan</button>
+      </div>
+    </form>
+  </dialog>
+
+  <!-- Native Modal Dialog: Install PWA Instructions -->
+  <dialog id="install-help-dialog" aria-labelledby="install-help-title" closedby="any">
+    <h2 id="install-help-title">📲 Install Vegas '26 Trip App</h2>
+    <p>This app works 100% offline (even on the flight or inside Red Rock Canyon!).</p>
+    <ul class="highlight-list">
+      <li><strong>iPhone / iPad (Safari):</strong> Tap the <strong>Share</strong> button at the bottom of Safari, then tap <strong>Add to Home Screen</strong>.</li>
+      <li><strong>Android / Desktop Chrome:</strong> Tap the browser menu (⋮) and choose <strong>Install app</strong> or <strong>Add to Home screen</strong>.</li>
+    </ul>
+    <form method="dialog" class="dialog-actions">
+      <button type="submit" class="btn btn-primary" autofocus>Got it</button>
+    </form>
+  </dialog>
+
+  <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+
+  <script type="module" src="./app.js"></script>
+</body>
+</html>
