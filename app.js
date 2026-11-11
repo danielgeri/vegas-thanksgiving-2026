@@ -11,13 +11,21 @@ import {
 
 const STORAGE_KEYS = {
   favorites: "vegas2026_favorites_v1",
-  checklist: "vegas2026_checklist_v1",
+  checklist: "vegas2026_checklist_v2",
   customPlans: "vegas2026_custom_plans_v1",
   theme: "vegas2026_theme_v1"
 };
 
+function loadChecklist() {
+  const savedV2 = JSON.parse(localStorage.getItem(STORAGE_KEYS.checklist) || "null");
+  if (savedV2) return savedV2;
+  const legacyV1 = JSON.parse(localStorage.getItem("vegas2026_checklist_v1") || "[]");
+  const customItems = legacyV1.filter((item) => String(item.id).startsWith("custom-"));
+  return [...customItems, ...structuredClone(DEFAULT_CHECKLIST)];
+}
+
 let favorites = new Set(JSON.parse(localStorage.getItem(STORAGE_KEYS.favorites) || "[]"));
-let checklist = JSON.parse(localStorage.getItem(STORAGE_KEYS.checklist) || "null") || structuredClone(DEFAULT_CHECKLIST);
+let checklist = loadChecklist();
 let customPlans = JSON.parse(localStorage.getItem(STORAGE_KEYS.customPlans) || "{}");
 let deferredInstallPrompt = null;
 

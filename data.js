@@ -17,16 +17,40 @@ export const TRIP_META = {
     summary: "Crisp Sunny Desert Days & Chilly Evenings",
     highF: "62°F – 67°F",
     lowF: "41°F – 46°F",
-    tips: "Bring warm layers/jackets for evening light shows (Enchant Christmas, Ethel M) and morning hikes at Red Rock Canyon."
+    tips: "Bring warm layers/jackets for evening light shows (Enchant Christmas, Ethel M) and morning strolls at Red Rock Canyon."
   },
+  groupSummary: "Peak Group: 9 Total on Thu (7 Adults + 2 Toddlers, ages 2 & ~3) • 8 on Fri–Sun after Mom's flight",
   travelers: [
-    { name: "Daniel Geri", role: "Organizer", email: "danielgeri@gmail.com", tags: ["SFO ⇄ LAS", "Homewood Suites", "Cliffs at Peace Canyon"] },
-    { name: "Maria Cavicchi", role: "Core Family", email: "mcav6487@gmail.com", tags: ["SFO ⇄ LAS", "Homewood Suites", "Cliffs at Peace Canyon"] },
-    { name: "Kayden Geri", role: "Kid Traveler", email: "", tags: ["SFO ⇄ LAS (Own Seat)", "Cliffs at Peace Canyon"] },
-    { name: "Leo Geri", role: "Infant Traveler", email: "", tags: ["Lap Infant", "Homewood Suites (2A + 1 Infant)"] },
-    { name: "James Geri", role: "Extended Family Group", email: "jamesgeri1@gmail.com", tags: ["Forwarded Cliffs at Peace Canyon Booking (Nov 10)"] },
-    { name: "Kumi Takahashi", role: "Extended Family Group", email: "kumi_geri@yahoo.com", tags: ["Family Group"] },
-    { name: "Joe Geri", role: "Extended Family Group", email: "uclafootball@outlook.com", tags: ["Family Group"] }
+    {
+      name: "Daniel Geri, Maria Cavicchi & Kayden (Age 2)",
+      role: "Bay Area Core Family (3)",
+      email: "danielgeri@gmail.com • mcav6487@gmail.com",
+      tags: ["Wed 11/25 – Mon 11/30", "SFO ⇄ LAS (3 Seats)", "Homewood Suites → Cliffs 2BR"]
+    },
+    {
+      name: "Mom",
+      role: "24-Hour Holiday Flyer (1)",
+      email: "Thu Arrival → Fri Departure",
+      tags: ["Flies in Thu 11/26", "Flies out Fri 11/27", "Priority Grandma Window!"]
+    },
+    {
+      name: "Brother (James Geri)",
+      role: "Driving In (1)",
+      email: "jamesgeri1@gmail.com",
+      tags: ["Drives in Thu 11/26", "Departure TBD", "Has Own Car • Cliffs 2BR Forwarded"]
+    },
+    {
+      name: "Vegas Sister #1",
+      role: "Las Vegas Local (1)",
+      email: "Lives in Vegas w/ Sister #2",
+      tags: ["Local Vegas Household", "Has Local Car", "All Weekend"]
+    },
+    {
+      name: "Vegas Sister #2, Partner & Toddler (Almost 3yo)",
+      role: "Las Vegas Local Family (3)",
+      email: "Lives in Vegas w/ Sister #1",
+      tags: ["2 Adults + Almost-3yo Cousin", "Has Local Car & Car Seat", "Toddler Playmate for Kayden!"]
+    }
   ]
 };
 
@@ -48,8 +72,7 @@ export const CONFIRMED_BOOKINGS = [
     passengers: [
       { name: "Daniel Geri", ticket: "5262418858456", seat: "Assigned at check-in" },
       { name: "Maria Cavicchi", ticket: "5262418858455", seat: "Assigned at check-in" },
-      { name: "Kayden Geri", ticket: "5262418858457", seat: "Assigned at check-in" },
-      { name: "Infant (Lap Child)", ticket: "Verify digitally at check-in", seat: "Lap" }
+      { name: "Kayden Geri (Age 2)", ticket: "5262418858457", seat: "Own Ticketed Seat" }
     ],
     highlights: [
       "Check-in opens 24h prior: Tuesday, Nov 24, 2026 at 5:20 PM PST (must check in ≥30 mins before departure).",
@@ -80,7 +103,7 @@ export const CONFIRMED_BOOKINGS = [
     mapsUrl: "https://www.google.com/maps/search/?api=1&query=Homewood+Suites+by+Hilton+Las+Vegas+Airport+230+Hidden+Well+Rd+Las+Vegas+NV+89119",
     priceSummary: "$86.19 Total Paid ($105.40 room + $13.70 tax − $32.91 OneKeyCash)",
     passengers: [
-      { name: "Daniel Geri + Maria Cavicchi + 1 Infant", ticket: "Studio Suite, 1 King Bed with Sofa Bed, Kitchen", seat: "1 Night" }
+      { name: "Daniel, Maria + 2yo Kayden (Booked as 2A + 1 Child/Infant)", ticket: "Studio Suite, 1 King Bed with Sofa Bed, Kitchen", seat: "1 Night" }
     ],
     highlights: [
       "Complimentary Airport Shuttle: Property offers transfers from LAS airport. Call (702) 407-0075 with arrival details upon landing at 6:55 PM.",
@@ -269,8 +292,8 @@ export const ITINERARY_DAYS = [
     dayId: "day-1",
     date: "Wed, Nov 25",
     isoDate: "2026-11-25",
-    title: "Arrival Night — Bay Area to Vegas",
-    theme: "Easy Transit & Airport Suite Check-In",
+    title: "Arrival Night — Bay Area Trio Lands in Vegas (3 People)",
+    theme: "Easy Transit & Toddler Bedtime at Homewood Suites Airport",
     items: [
       {
         id: "it-1",
@@ -278,7 +301,7 @@ export const ITINERARY_DAYS = [
         title: "Depart SFO on Southwest WN #2386",
         type: "confirmed",
         location: "San Francisco Int'l Airport (SFO)",
-        note: "Conf #CACD5X • Daniel, Maria, Kayden + Leo. Arrive at SFO by 3:45 PM."
+        note: "Conf #CACD5X • Daniel, Maria & 2yo Kayden (3 ticketed seats). Arrive at SFO by 3:45 PM."
       },
       {
         id: "it-2",
@@ -286,7 +309,7 @@ export const ITINERARY_DAYS = [
         title: "Land at Harry Reid Int'l (LAS) & Call Shuttle",
         type: "confirmed",
         location: "LAS Terminal 1",
-        note: "Call Homewood Suites at (702) 407-0075 for complimentary airport shuttle transfer (or 5-min Uber)."
+        note: "Call Homewood Suites at (702) 407-0075 for complimentary airport shuttle transfer (or 5-min ride)."
       },
       {
         id: "it-3",
@@ -294,7 +317,7 @@ export const ITINERARY_DAYS = [
         title: "Check-in: Homewood Suites by Hilton Las Vegas Airport",
         type: "confirmed",
         location: "230 Hidden Well Rd, Las Vegas, NV 89119",
-        note: "Expedia #73585813376033 • Studio Suite (1 King + Sofa Bed + Kitchen). Grab easy dinner/DoorDash & rest up."
+        note: "Expedia #73585813376033 • Studio Suite (1 King + Sofa Bed + Kitchen). Quick bite & straight to bed for Kayden."
       }
     ]
   },
@@ -302,48 +325,48 @@ export const ITINERARY_DAYS = [
     dayId: "day-2",
     date: "Thu, Nov 26",
     isoDate: "2026-11-26",
-    title: "Thanksgiving Day — Resort Move-In & Holiday Feast",
-    theme: "Bridging the 11 AM → 4 PM Window + Group Thanksgiving Dinner",
+    title: "Thanksgiving Day — ALL 9 Together! (Mom Flies In + Brother Drives In)",
+    theme: "Peak Family Day (7 Adults + 2 Toddlers) — Protect Mom's 24-Hour Visit!",
     items: [
       {
         id: "it-4",
         time: "10:30 AM",
-        title: "Check-out of Homewood Suites & Pick Up Rental Car",
+        title: "Check-out of Homewood Suites & Pick Up Compact/Midsize SUV",
         type: "confirmed",
         location: "230 Hidden Well Rd / LAS Rent-A-Car Center (7135 Gilespie St)",
-        note: "Homewood Suites check-out is 11:00 AM. Rent-A-Car Center is 3 mins away—ideal time to pick up a minivan/SUV."
+        note: "You only need 1 standard SUV + Kayden's car seat—your Vegas sisters have local car(s)/car seat and your brother is driving his own car!"
       },
       {
         id: "it-5",
-        time: "11:30 AM – 2:30 PM",
-        title: "Transition Gap Option A: PopStroke Town Square OR Bellagio Conservatory",
+        time: "11:30 AM – 3:15 PM",
+        title: "Head to Sisters' Vegas House for Toddler Nap, Cousin Play & Mom/Brother Arrivals",
         type: "suggested",
-        location: "Town Square (6617 Las Vegas Blvd S) — 4 mins from Homewood Suites",
-        note: "Bridges the 11 AM–4 PM gap! PopStroke has 2 mini-golf courses, outdoor dining & kids' playground; or stroll the free Bellagio Holiday Conservatory."
+        location: "Vegas Sisters' Home (or scoop Mom up at LAS on your way!)",
+        note: "BEST MOVE for the 11 AM–4 PM hotel gap: Kayden (2yo) gets a real midday nap & plays with his almost-3yo cousin, Mom lands at LAS, and Brother can drive straight in without I-15 timing stress!"
       },
       {
         id: "it-6",
-        time: "2:45 PM",
-        title: "Grocery & Breakfast Stock-Up for the 2-Bedroom Suite",
+        time: "3:15 PM",
+        title: "Quick Grocery & Toddler Breakfast Run for the 2BR Condo",
         type: "suggested",
         location: "Trader Joe's / Whole Foods (Downtown Summerlin) or Smith's (Flamingo & Grand Canyon)",
-        note: "The Cliffs at Peace Canyon has a full kitchen—stock up on coffee, milk, fruit, snacks for Kayden/Leo, and drinks for the group."
+        note: "Grab milk, berries, eggs, coffee & toddler snacks for The Cliffs at Peace Canyon's full kitchen."
       },
       {
         id: "it-7",
         time: "4:00 PM",
-        title: "Check-in: The Cliffs at Peace Canyon (4 Nights)",
+        title: "Check-in: The Cliffs at Peace Canyon (4 Nights • 2-Bedroom Unit)",
         type: "confirmed",
         location: "4550 S Grand Canyon Dr, Las Vegas, NV 89147",
-        note: "Booking.com #5477904180 (PIN: 1964) • Two-Bedroom Unit. Bring photo ID + credit card for $150 refundable deposit & $40 resort fee."
+        note: "Booking.com #5477904180 (PIN: 1964) • Sleeps Daniel, Maria & Kayden + Brother (2nd BR). Bring ID + credit card ($150 refundable deposit + $40 resort fee)."
       },
       {
         id: "it-8",
-        time: "6:00 PM",
-        title: "Group Thanksgiving Dinner (Book ASAP!)",
+        time: "4:45 PM – 5:15 PM",
+        title: "Thanksgiving Feast for All 9 (7 Adults + 2 High Chairs) — Stay Off the Strip!",
         type: "suggested",
-        location: "Summerlin (Maggiano's / JING / Durango) or Strip (Carmine's / STRIPSTEAK / Carversteak)",
-        note: "See the 'Restaurants' tab for top large-group Thanksgiving prix-fixe, family-style Italian, or Chinatown Hot Pot options."
+        location: "Option A: Catered at Sisters' House / 2BR Condo • Option B: Maggiano's Summerlin or Summer House Durango",
+        note: "Since Mom leaves tomorrow & you have two 2–3yo toddlers, skip Strip casino traffic! Either host a catered feast (Maggiano's/Whole Foods/HoneyBaked) so toddlers roam freely, or book an early 4:45–5:15 PM table for 9 (7A + 2 high chairs) 7–10 mins away."
       }
     ]
   },
@@ -351,40 +374,40 @@ export const ITINERARY_DAYS = [
     dayId: "day-3",
     date: "Fri, Nov 27",
     isoDate: "2026-11-27",
-    title: "Black Friday — Red Rock Canyon & Enchant Christmas",
-    theme: "West Vegas Desert Beauty + Summerlin Holiday Lights (10 mins from Resort)",
+    title: "Black Friday — Grandma Send-Off Brunch, Toddlers Outdoors & Holiday Lights",
+    theme: "Morning Quality Time Before Mom's Flight → 8 People (6 Adults + 2 Toddlers)",
     items: [
       {
         id: "it-9",
-        time: "9:30 AM",
-        title: "Red Rock Canyon 13-Mile Scenic Drive & Visitor Center",
+        time: "9:00 AM – 11:00 AM",
+        title: "Grandma Farewell Breakfast & Family Photos Before Mom's Flight",
         type: "suggested",
-        location: "1000 Scenic Loop Dr (15 mins west of The Cliffs at Peace Canyon)",
-        note: "Reserve timed-entry vehicle pass ($2/reservation + $20/car on Recreation.gov). Easy stroller/toddler trails & desert tortoise habitat."
+        location: "2BR Condo / Sisters' House OR Summer House at Durango Resort (7 mins away)",
+        note: "Prioritize slow morning time with Mom, all 4 siblings, and both toddler grandkids before Mom heads to LAS airport!"
       },
       {
         id: "it-10",
-        time: "1:00 PM",
-        title: "Group Lunch at Durango Resort's 'Eat Your Heart Out' Food Hall",
+        time: "11:30 AM (or Post-Nap 2:30 PM)",
+        title: "Exploration Peak Park (Frontier Toddler Playground) OR Red Rock Scenic Loop",
         type: "suggested",
-        location: "6915 S Durango Dr (Only 7 mins from The Cliffs at Peace Canyon!)",
-        note: "Zero wait for large groups! Everyone picks from Shang Artisan Noodle, Prince Street Pizza, Irv's Burgers, Villa's Tacos, or Yu Or Mi Sushi."
+        location: "9275 S Buffalo Dr (10 mins south) OR Red Rock Canyon (15 mins west)",
+        note: "Exploration Peak has a flat Old West town & fossil dig built for 2–3yo toddlers; Red Rock's 13-mile loop lets sleepy toddlers ride/nap in car seats ($2 Recreation.gov timed entry)."
       },
       {
         id: "it-11",
-        time: "5:30 PM",
-        title: "Enchant Christmas Light Maze & Ice Trail at Las Vegas Ballpark",
+        time: "4:45 PM (Opening Slot)",
+        title: "Holiday Lights: Enchant Christmas (Bring Carriers!) OR Glittering Lights Drive-Thru",
         type: "suggested",
-        location: "1650 S Pavilion Center Dr, Downtown Summerlin (10 mins from resort)",
-        note: "2026 Theme: 'The Great Search' — massive walk-through light maze, Santa visits, holiday village & dinner at Downtown Summerlin."
+        location: "Las Vegas Ballpark (10 mins away) OR LV Motor Speedway Drive-Thru",
+        note: "⚠️ TODDLER PRO TIP: Enchant prohibits strollers inside the Light Maze (park stroller outside + use toddler carriers, no backpacks >16x16x8). Want zero walking? Do Glittering Lights ($39/car) with kids in PJs! (Note: NO Downtown Summerlin Parade on Black Friday—it runs Sat Nov 28!)"
       },
       {
         id: "it-12",
-        time: "8:00 PM (Optional)",
-        title: "Evening Concert Option: The Eagles at Sphere OR Journey at MGM Grand",
+        time: "8:00 PM (Optional Adult Swap)",
+        title: "Adults-Only Night Out (Built-In Family Babysitting Swap!)",
         type: "suggested",
-        location: "The Sphere / MGM Grand Garden Arena",
-        note: "For adults in the group wanting a blockbuster Black Friday night concert while others relax at the 2BR condo."
+        location: "Wax Rabbit Speakeasy (Durango, 7 mins) / Sphere (The Eagles) / Strip",
+        note: "Once the 2yo & almost-3yo are asleep (~7:30 PM), 6 adults means easy babysitting trade-offs!"
       }
     ]
   },
@@ -392,32 +415,32 @@ export const ITINERARY_DAYS = [
     dayId: "day-4",
     date: "Sat, Nov 28",
     isoDate: "2026-11-28",
-    title: "Saturday — Immersive Vegas & Chinatown Group Feast",
-    theme: "The Sphere / AREA15 + Spring Mountain Road Communal Dining",
+    title: "Saturday — Toddler Heaven + Free 6 PM Holiday Parade & Chinatown",
+    theme: "Built Around Two 2–3yo Cousins + 6 Adults",
     items: [
       {
         id: "it-13",
-        time: "10:30 AM",
-        title: "Morning Kid & Family Adventure: Discovery Children's Museum OR Springs Preserve",
+        time: "9:30 AM – 12:00 PM",
+        title: "Discovery Children's Museum (Toddler Town + Water World) OR Springs Preserve",
         type: "suggested",
-        location: "360 Promenade Pl / 333 S Valley View Blvd (~18 mins from resort)",
-        note: "3 floors of interactive water/climbing exhibits for Kayden, or 180 acres of desert botanical trails & train rides at Springs Preserve."
+        location: "360 Promenade Pl (18 mins) OR 333 S Valley View Blvd (15 mins)",
+        note: "Discovery Museum's Water World (smocks provided!) & Toddler Town are peak joy for a 2yo + almost-3yo before midday nap!"
       },
       {
         id: "it-14",
-        time: "2:30 PM",
-        title: "The Wizard of Oz at Sphere OR AREA15 / Omega Mart",
+        time: "12:30 PM – 3:00 PM",
+        title: "Midday Toddler Nap Break (+ Optional Adult Subset Outing to Sphere / AREA15)",
         type: "suggested",
-        location: "The Sphere (255 Sands Ave) or AREA15 (3215 S Rancho Dr)",
-        note: "Daytime immersive show at Sphere with haptic wind/scent effects, or explore Meow Wolf's Omega Mart."
+        location: "The Cliffs 2BR Condo / Sisters' House",
+        note: "⚠️ Sphere 'Wizard of Oz' recommends ages 6+, charges full ticket for 2yo, and has loud tornado audio/strobes—best done by an adult subgroup while toddlers nap!"
       },
       {
         id: "it-15",
-        time: "6:30 PM",
-        title: "Large-Group Chinatown Feast (KBBQ, Hot Pot, or Garlic Prawns)",
+        time: "5:00 PM Dinner → 6:00 PM Parade",
+        title: "Early Group Dinner + FREE 6:00 PM Downtown Summerlin Holiday Parade!",
         type: "suggested",
-        location: "Spring Mountain Rd Corridor (14 mins from The Cliffs at Peace Canyon)",
-        note: "Chubby Cattle Wagyu Hot Pot, 888 Japanese BBQ, Lotus of Siam, or Chengdu Taste—followed by drinks at The Golden Tiki."
+        location: "Downtown Summerlin (10 mins) or Chinatown Round-Table Feast (14 mins)",
+        note: "VERIFIED FOR SAT NOV 28 @ 6:00 PM: Free 25-min Holiday Parade on Park Centre Dr with Polar Express float, snow flurries & Santa—ideal 2–3yo length!"
       }
     ]
   },
@@ -425,32 +448,32 @@ export const ITINERARY_DAYS = [
     dayId: "day-5",
     date: "Sun, Nov 29",
     isoDate: "2026-11-29",
-    title: "Sunday — Strip Highlights & Ethel M Cactus Garden Lights",
-    theme: "Classic Vegas Sights + Farewell Group Dinner",
+    title: "Sunday — Easy Food Hall, Sharks & Stroller-Friendly Cactus Lights",
+    theme: "Relaxed Family Pace (7–8 People)",
     items: [
       {
         id: "it-16",
         time: "11:00 AM",
-        title: "Sunday Group Brunch at Summer House (Durango Resort) or Mon Ami Gabi",
+        title: "Zero-Wait Group Lunch at 'Eat Your Heart Out' Food Hall (Durango Resort)",
         type: "suggested",
-        location: "Durango Resort (7 mins away) or Paris Las Vegas",
-        note: "Summer House Santa Monica at Durango has sun-drenched group tables & a famous cookie bar."
+        location: "6915 S Durango Dr (Only 7 mins from The Cliffs at Peace Canyon!)",
+        note: "Easiest meal of the trip with two toddlers: zero wait for 8 people, high chairs, pizza/noodles/burgers/tacos & frozen custard."
       },
       {
         id: "it-17",
-        time: "2:00 PM",
-        title: "Shark Reef Aquarium (Mandalay Bay) or High Roller Group Cabin",
+        time: "2:30 PM (Post-Nap)",
+        title: "Shark Reef Aquarium Tunnel (Mandalay Bay) + Bellagio Conservatory",
         type: "suggested",
-        location: "Las Vegas Strip",
-        note: "Walk-through shark tunnel & sea turtles for the kids, or a 30-minute panoramic ride on the High Roller."
+        location: "South/Mid Strip (~19 mins)",
+        note: "60–75 minute walkthrough sweet spot—2yo & almost-3yo cousins will love the 360° shark & sea turtle tunnel!"
       },
       {
         id: "it-18",
-        time: "5:30 PM",
+        time: "5:15 PM",
         title: "Ethel M Chocolates 33rd Annual Holiday Cactus Garden Lights",
         type: "suggested",
         location: "2 Cactus Garden Dr, Henderson, NV",
-        note: "Free admission! Stroll 3 acres of cacti lit with 1,000,000+ holiday lights with famous hot chocolate."
+        note: "FREE admission & 100% stroller-friendly (unlike Enchant's maze)! 1M+ lights & hot cocoa before bedtime."
       }
     ]
   },
@@ -458,7 +481,7 @@ export const ITINERARY_DAYS = [
     dayId: "day-6",
     date: "Mon, Nov 30",
     isoDate: "2026-11-30",
-    title: "Departure Day — Checkout & Flight Home to SFO",
+    title: "Departure Day — Checkout & Flight Home to SFO (3 People)",
     theme: "Morning Pack-Up & Midday Nonstop Flight",
     items: [
       {
@@ -472,10 +495,10 @@ export const ITINERARY_DAYS = [
       {
         id: "it-20",
         time: "10:30 AM",
-        title: "Early Farewell Brunch / Bagel Stop & Rental Car Return",
+        title: "Quick Bagel / Breakfast Stop & Rental Car Return",
         type: "suggested",
-        location: "Bagelmania / Sadelle's / Downtown Summerlin → LAS Rent-A-Car Center",
-        note: "Allow 25 mins drive to LAS Rent-A-Car Center + shuttle to Terminal 3."
+        location: "Downtown Summerlin / Durango → LAS Rent-A-Car Center",
+        note: "Allow 25 mins drive to LAS Rent-A-Car Center + shuttle to Terminal 3 with Kayden's car seat."
       },
       {
         id: "it-21",
@@ -483,7 +506,7 @@ export const ITINERARY_DAYS = [
         title: "United Bag Drop Cutoff (45m prior) at LAS Terminal 3",
         type: "confirmed",
         location: "LAS Terminal 3",
-        note: "Conf #L29ERJ • Remember Basic Economy carry-on restriction (personal item 9\"x10\"x17\" only unless checking before security)."
+        note: "Conf #L29ERJ • Car seat & stroller check/gate-check FREE on United; remember Basic Economy 9\"x10\"x17\" personal-item rule for adult bags."
       },
       {
         id: "it-22",
@@ -760,14 +783,26 @@ export const EVENTS = [
   {
     id: "evt-enchant",
     title: "Enchant Christmas: 'The Great Search' & Ice Skating Trail",
-    dates: "Open Nightly Nov 20 – Dec 27, 2026 (Including Nov 25–30)",
+    dates: "Open Nightly Nov 20 – Dec 27, 2026 (Opens ~4:30/5:00 PM)",
     venue: "Las Vegas Ballpark (Downtown Summerlin)",
     driveFromResort: "10 mins (4.7 mi)",
     category: "Holiday & Family",
     price: "$35–$48 Adult / Kids & Family Packs Available",
-    tags: ["10 Mins from Resort", "All Ages", "Must-Do Holiday Event"],
-    description: "Right in your backyard in Summerlin! The Las Vegas Ballpark transforms into the world's largest Christmas light maze ('The Great Search' 2026 story), complete with a real ice-skating trail, Santa's Landing, live music, and an artisan village.",
+    tags: ["10 Mins from Resort", "⚠️ No Strollers Inside Maze", "Book 4:30 PM Slot"],
+    description: "Right in Summerlin! World's largest Christmas light maze, Santa's Landing, and artisan village. ⚠️ IMPORTANT FOR YOUR 2 TODDLERS: Strollers are allowed on the ballpark concourse, but PROHIBITED inside the light maze itself (park outside & use toddler carriers), and backpacks are banned (bags max 16\"×16\"×8\").",
     url: "https://enchantchristmas.com/"
+  },
+  {
+    id: "evt-summerlin-parade",
+    title: "Downtown Summerlin FREE Holiday Parade (Polar Express & Snow!)",
+    dates: "Saturday, Nov 28, 2026 at 6:00 PM (⚠️ NO Parade on Black Friday Nov 27!)",
+    venue: "Park Centre Drive at Downtown Summerlin",
+    driveFromResort: "10 mins (4.7 mi)",
+    category: "Holiday & Family",
+    price: "FREE (No tickets required)",
+    tags: ["Best for 2–3yo Toddlers!", "FREE", "Sat Nov 28 Only"],
+    description: "25-minute high-energy street parade with Polar Express floats, costumed dancers, fake snow flurries, and Santa Claus—literally the ideal attention span for a 2-year-old and almost-3-year-old! Verified schedule note: skipped on Black Friday (Nov 27), runs Saturday (Nov 28) at 6:00 PM.",
+    url: "https://summerlin.com/downtown-summerlin/"
   },
   {
     id: "evt-sphere-oz",
@@ -776,9 +811,9 @@ export const EVENTS = [
     venue: "Sphere Las Vegas (255 Sands Ave)",
     driveFromResort: "20 mins (10.3 mi)",
     category: "Immersive & Family",
-    price: "From $79–$149",
-    tags: ["All Ages", "Sphere Tech", "Daytime Friendly"],
-    description: "Experience the 160,000 sq ft 16K wraparound LED screen at Sphere with custom haptic seats, wind effects during the tornado, and synchronized scents.",
+    price: "From $79–$149 (Every age needs a full ticket)",
+    tags: ["⚠️ Recommended Ages 6+", "Adult Swap-Off Outing", "Intense 4D Audio/Wind"],
+    description: "16K wraparound LED screen with haptic shaking seats, tornado wind, fog, strobes, and booming 164,000-speaker audio. ⚠️ TODDLER HEADS-UP: Officially recommended for ages 6+ (and 2–3yo toddlers still require full-price tickets and often get scared by the tornado sequence)—best done by an adult subgroup!",
     url: "https://www.thesphere.com/"
   },
   {
@@ -856,208 +891,214 @@ export const EVENTS = [
   {
     id: "evt-glittering-lights",
     title: "Glittering Lights Drive-Thru at Las Vegas Motor Speedway",
-    dates: "Nightly Nov 6, 2026 – Jan 3, 2027 (Starts at Dusk)",
+    dates: "Nightly Nov 6, 2026 – Jan 3, 2027 (Starts at Dusk ~4:45 PM)",
     venue: "Las Vegas Motor Speedway",
     driveFromResort: "32 mins",
     category: "Holiday & Family",
     price: "$39 per vehicle (Whole carload!)",
-    tags: ["Stay in Warm Car", "Great with Infant/Toddler"],
-    description: "Nevada's largest drive-thru holiday light show spanning 2.5+ miles with 5 million LED lights. Perfect if Kayden and Leo are sleepy—everyone stays cozy in the SUV/minivan!",
+    tags: ["Stay in Warm Car", "Zero Toddler Walking", "PJ-Friendly"],
+    description: "Nevada's largest drive-thru holiday light show spanning 2.5+ miles with 5 million LED lights. Zero stroller hassle—put both 2–3yo cousins in pajamas with snacks and stay cozy in your cars!",
     url: "https://glitteringlightslasvegas.com/"
   },
   {
     id: "evt-cirque-mystere",
-    title: "Cirque du Soleil: 'Mystère' (Treasure Island) or 'O' (Bellagio)",
+    title: "Cirque du Soleil: 'Mystère' or 'O' (Adults Swap Night)",
     dates: "Evening Performances (7:00 PM & 9:30 PM)",
     venue: "Treasure Island / Bellagio",
     driveFromResort: "18 mins",
     category: "Strip Production",
     price: "From $69 (Mystère) / $129 ('O')",
-    tags: ["Family Friendly", "Classic Vegas"],
-    description: "Mystère is Cirque du Soleil's most family- and kid-friendly show with high-energy acrobatics and physical comedy, while 'O' at Bellagio is an aquatic masterpiece.",
+    tags: ["⚠️ 'O' Requires Ages 5+", "Adults Night Out"],
+    description: "Note for your group: 'O' at Bellagio strictly enforces age 5+, and 7:00 PM / 9:30 PM curtains overlap toddler bedtime—great option if 2–4 adults swap babysitting one evening!",
     url: "https://www.cirquedusoleil.com/las-vegas"
   }
 ];
 
 export const ACTIVITIES = [
   {
+    id: "act-discovery-museum",
+    title: "Discovery Children's Museum (Toddler Town & Water World)",
+    zone: "Downtown / Symphony Park",
+    driveFromResort: "18 mins (10.5 mi)",
+    duration: "2–2.5 hours",
+    bestFor: "#1 Indoor Hit for 2yo Kayden + Almost-3yo Cousin",
+    kidFriendly: true,
+    tags: ["S-Tier for Ages 2–3", "Water World Smocks", "Indoor"],
+    description: "58,000-square-foot, three-story interactive children's museum featuring dedicated Toddler Town, Water World splash tables (with waterproof smocks!), pirate ship, and EcoCity—purpose-built for 2- and 3-year-olds.",
+    proTip: "Go right at 9:30 AM/10:00 AM opening so both toddlers can burn energy before their midday nap! Right next to North Premium Outlets too.",
+    url: "https://www.discoverykidslv.org/"
+  },
+  {
+    id: "act-exploration-peak",
+    title: "Exploration Peak Park (Old West Frontier Toddler Playground)",
+    zone: "Southwest / Mountain's Edge",
+    driveFromResort: "10 mins (4.9 mi)",
+    duration: "1.5–2 hours",
+    bestFor: "2yo & Almost-3yo Outdoor Play (Way Better Than Steep Fox Hill!)",
+    kidFriendly: true,
+    tags: ["10 Mins from Resort", "FREE", "Built for Toddlers"],
+    description: "Flat, imaginative miniature Old West frontier town playground with ground-level storefronts, covered wagons, and a dinosaur/archaeology fossil dig sandpit—far safer and easier for 2- and 3-year-olds than the steep ropes at Fox Hill Park.",
+    proTip: "Grab morning coffee on the way—easy free morning outing where all 6–7 adults can chat while the two cousins dig and explore.",
+    url: "https://www.clarkcountynv.gov/government/departments/parks___recreation/"
+  },
+  {
     id: "act-red-rock",
     title: "Red Rock Canyon National Conservation Area",
     zone: "West Vegas / Summerlin",
     driveFromResort: "15 mins (8.2 mi)",
-    duration: "2–3 hours",
-    bestFor: "Whole Group (Scenic Drive + Easy Trails)",
+    duration: "2–2.5 hours",
+    bestFor: "Whole Group Caravan (13-Mile Scenic Drive + Short Flat Walks)",
     kidFriendly: true,
-    tags: ["15 Mins from Resort", "Must-Do Outdoors", "Stroller Friendly Visitor Center"],
-    description: "Towering crimson Aztec sandstone cliffs right up the road from The Cliffs at Peace Canyon. Drive the 13-mile one-way Scenic Loop stopping at Calico Hills, High Point Overlook, and the Petroglyph Wall trail (flat 0.2-mile walk great for kids).",
-    proTip: "Timed entry reservations are required between 8:00 AM and 5:00 PM (Oct 1 – May 31) on Recreation.gov ($2 reservation fee + $20/vehicle, or free with America the Beautiful Pass).",
+    tags: ["15 Mins from Resort", "Stroller-Friendly Visitor Center", "Nap-Drive Friendly"],
+    description: "Towering crimson sandstone cliffs 15 mins from your condo. Drive the 13-mile Scenic Loop stopping at the Visitor Center (desert tortoises!) and Petroglyph Wall trail (flat 0.2-mile walk easy for toddler legs).",
+    proTip: "Reserve timed entry on Recreation.gov ($2 + $20/car between 8 AM–5 PM) for each car in your family caravan.",
     url: "https://www.recreation.gov/timed-entry/10075177"
   },
   {
+    id: "act-springs-preserve",
+    title: "Springs Preserve & Botanical Gardens",
+    zone: "West / Central Valley",
+    driveFromResort: "15 mins (7.8 mi)",
+    duration: "2–3 hours",
+    bestFor: "Stroller-Friendly Multi-Gen Walk, Desert Animals & Train",
+    kidFriendly: true,
+    tags: ["15 Mins from Resort", "100% Stroller Friendly", "Desert Wildlife"],
+    description: "180 acres of flat paved desert botanical trails, live foxes/tortoises/lizards, Boomtown 1905 streetscape, indoor kid exhibits, and playground—great with Mom on Friday morning if she has an afternoon flight!",
+    proTip: "Flat paved loops make pushing two strollers side-by-side completely effortless.",
+    url: "https://www.springspreserve.org/"
+  },
+  {
     id: "act-downtown-summerlin",
-    title: "Downtown Summerlin & Rock Rink Ice Skating",
+    title: "Downtown Summerlin & Sat 6 PM Holiday Parade",
     zone: "West Vegas / Summerlin",
     driveFromResort: "10 mins (4.7 mi)",
-    duration: "2–4 hours",
-    bestFor: "Shopping, Dining, Holiday Parade & Skating",
+    duration: "2–3 hours",
+    bestFor: "Stroller Strolling, Dining, Trader Joe's & Sat Night Snow Parade",
     kidFriendly: true,
-    tags: ["10 Mins from Resort", "Stroller Friendly", "Holiday Parade"],
-    description: "Open-air walkable lifestyle district featuring 125+ shops, Trader Joe's, outdoor fire pits, the seasonal Rock Rink outdoor ice skating pavilion, and a free Friday/Saturday evening Holiday Parade at 6:00 PM!",
-    proTip: "Check out the free Holiday Parade on Friday & Saturday evenings—kids love the snow machines and floats!",
+    tags: ["10 Mins from Resort", "Sat Nov 28 Parade @ 6 PM", "Stroller Friendly"],
+    description: "Open-air walkable district with 125+ shops, Trader Joe's, Rock Rink ice skating, Maggiano's, and the FREE Saturday 6:00 PM Holiday Parade (note: no parade on Black Friday Nov 27!).",
+    proTip: "Arrive at 4:45 PM on Saturday, Nov 28 for an early group dinner, then watch the 25-minute 6:00 PM Holiday Parade before bedtime.",
     url: "https://summerlin.com/downtown-summerlin/"
+  },
+  {
+    id: "act-lion-habitat",
+    title: "Lion Habitat Ranch (Lions + Feed Ozzie the Giraffe)",
+    zone: "Henderson / South Valley",
+    driveFromResort: "22 mins (14.5 mi)",
+    duration: "1.5 hours",
+    bestFor: "Quick Morning Animal Outing (Even Open Thanksgiving 11 AM–3 PM!)",
+    kidFriendly: true,
+    tags: ["Toddlers Love It", "Open Thu–Sun 11 AM–3 PM", "Stroller Friendly"],
+    description: "Outdoor sanctuary housing ~30 African lions, tortoises, ostriches, and Ozzie the painting giraffe—short 60–90 minute loop that fits toddler attention spans without zoo exhaustion.",
+    proTip: "Note: Gilcrease Nature Sanctuary is CLOSED on Thanksgiving Day, whereas Lion Habitat Ranch is open 11 AM–3 PM (last entry 2 PM).",
+    url: "https://lionhabitatranch.org/"
   },
   {
     id: "act-popstroke",
     title: "PopStroke Las Vegas at Town Square",
     zone: "South Strip / Airport",
     driveFromResort: "16 mins (4 mins from Homewood Suites!)",
-    duration: "2 hours",
-    bestFor: "All-Ages Group Competition + Thu Nov 26 Check-Out Gap",
+    duration: "1.5–2 hours",
+    bestFor: "Casual Adult Putting + Enclosed On-Site Kids' Playground",
     kidFriendly: true,
-    tags: ["4 Mins from Night 1 Hotel", "Large Group Fun", "Kids Playground On-Site"],
-    description: "Tiger Woods-backed two-course synthetic turf putting complex with an on-site open-air restaurant, craft beer/cocktail delivery right to the greens, an enclosed kids' playground, and gourmet ice cream.",
-    proTip: "Located just 4 minutes from Homewood Suites Las Vegas Airport—the #1 way to spend Thursday, Nov 26 between 11:00 AM check-out and 4:00 PM check-in!",
+    tags: ["Enclosed Toddler Playground", "Outdoor Dining", "Ice Cream"],
+    description: "Two synthetic turf putting courses with an on-site open-air restaurant, drinks delivered to the greens, gourmet ice cream, and a fenced-in kids' playground where the 2yo and almost-3yo can play while adults putt.",
+    proTip: "Right across I-215/I-15 near Town Square—super easy daytime hangout for 6–7 adults + 2 toddlers.",
     url: "https://popstroke.com/venues/las-vegas/"
-  },
-  {
-    id: "act-area15",
-    title: "AREA15 & Meow Wolf's Omega Mart",
-    zone: "Off-Strip West",
-    driveFromResort: "15 mins (8.1 mi)",
-    duration: "2.5–3.5 hours",
-    bestFor: "Immersive Art, Interactive Tech & Group Exploration",
-    kidFriendly: true,
-    tags: ["Indoor All-Weather", "All Ages Daytime", "Mind-Bending"],
-    description: "Massive indoor experiential complex featuring Meow Wolf's Omega Mart (a surreal supermarket hiding secret slides and portals into alternate dimensions), Illuminarium, Wink World, and LIFTOFF panoramic ride.",
-    proTip: "Go before 4:00 PM for the best family-friendly atmosphere; book Omega Mart tickets online in advance.",
-    url: "https://area15.com/"
-  },
-  {
-    id: "act-discovery-museum",
-    title: "Discovery Children's Museum (Symphony Park)",
-    zone: "Downtown / Symphony Park",
-    driveFromResort: "18 mins (10.5 mi)",
-    duration: "2–3 hours",
-    bestFor: "Kayden & Leo + Parents/Grandparents",
-    kidFriendly: true,
-    tags: ["Best for Toddlers/Kids", "3 Floors Hands-On", "Indoor"],
-    description: "58,000-square-foot, three-story interactive children's museum featuring a 70-foot climbing tower ('The Summit'), Water World splash zone (with waterproof smocks!), Toddler Town, and EcoCity.",
-    proTip: "Located right next to Las Vegas North Premium Outlets if part of the group wants to shop Black Friday deals while the others take the kids to the museum!",
-    url: "https://www.discoverykidslv.org/"
-  },
-  {
-    id: "act-springs-preserve",
-    title: "Springs Preserve & Nevada State Museum",
-    zone: "West / Central Valley",
-    driveFromResort: "15 mins (7.8 mi)",
-    duration: "2–3 hours",
-    bestFor: "Multi-Generational Stroll, Botanical Gardens & Train Rides",
-    kidFriendly: true,
-    tags: ["180 Acres", "Desert Wildlife", "Stroller Friendly"],
-    description: "The birthplace of Las Vegas—180 acres of desert botanical gardens, live animal exhibits (foxes, gila monsters, tortoises), Boomtown 1905 historical streetscape, and interactive museum halls.",
-    proTip: "Flat paved paths make it effortless with a stroller for Leo and plenty of space for Kayden to run.",
-    url: "https://www.springspreserve.org/"
   },
   {
     id: "act-shark-reef",
     title: "Shark Reef Aquarium at Mandalay Bay",
     zone: "The Strip",
     driveFromResort: "19 mins (10.2 mi)",
-    duration: "1.5 hours",
-    bestFor: "All Ages Underwater Walk-Through Tunnel",
+    duration: "1–1.5 hours",
+    bestFor: "60-Minute Toddler-Sized Underwater Tunnel Adventure",
     kidFriendly: true,
-    tags: ["Kid Favorite", "100+ Sharks & Rays", "Easy Strip Stop"],
-    description: "1.3-million-gallon aquarium featuring a 360-degree acrylic shipwreck tunnel with sharks, giant sea turtles, sawfish, Komodo dragons, and a stingray touch pool.",
-    proTip: "Timed-entry tickets include access to the Undersea Explorer VR theater.",
+    tags: ["2–3yo Hit!", "Sharks & Sea Turtles", "Indoor"],
+    description: "1.3-million-gallon aquarium with a 360-degree acrylic shipwreck tunnel of sharks, giant sea turtles, sawfish, and stingrays—short enough that neither toddler gets overtired.",
+    proTip: "Book timed-entry tickets online so you breeze straight inside with strollers.",
     url: "https://mandalaybay.mgmresorts.com/en/entertainment/shark-reef-aquarium.html"
   },
   {
-    id: "act-topgolf",
-    title: "Topgolf Las Vegas (Behind MGM Grand)",
-    zone: "The Strip",
-    driveFromResort: "20 mins (10.4 mi)",
-    duration: "2 hours",
-    bestFor: "Large Group Bay Rental (Adjacent Bays for 8–12+)",
-    kidFriendly: true,
-    tags: ["Heated Bays", "Food & Drinks at Bay", "All Skill Levels"],
-    description: "Four-level entertainment venue with climate-controlled hitting bays, microchipped golf balls, giant HDTVs for Thanksgiving NFL games, and full food/beverage service.",
-    proTip: "Reserve 2 adjacent bays in advance so up to 12 people in your group can play and hang out together.",
-    url: "https://topgolf.com/us/las-vegas/"
-  },
-  {
-    id: "act-neon-pinball",
-    title: "Pinball Hall of Fame & Welcome to Fabulous Las Vegas Sign",
-    zone: "South Strip",
-    driveFromResort: "18 mins (9.6 mi)",
-    duration: "1–1.5 hours",
-    bestFor: "Nostalgic Quarter-Play & Group Photo Op",
-    kidFriendly: true,
-    tags: ["Free Entry", "Right Across from Vegas Sign", "Retro Fun"],
-    description: "25,000-square-foot nonprofit museum housing hundreds of playable vintage and modern pinball & arcade machines from the 1950s to today (25¢–$1 per play), right across from the iconic Welcome to Las Vegas sign.",
-    proTip: "Free admission and free parking—bring a roll of quarters or cash for the change machines!",
-    url: "http://www.pinballhall.org/"
+    id: "act-area15",
+    title: "AREA15 & Meow Wolf's Omega Mart (Best for Adult Subset)",
+    zone: "Off-Strip West",
+    driveFromResort: "15 mins (8.1 mi)",
+    duration: "2–3 hours",
+    bestFor: "Adults Swap-Off During Toddler Nap or Evening",
+    kidFriendly: false,
+    tags: ["⚠️ Sensory/Crowded for 2yo", "Great for Adults", "15 Mins Away"],
+    description: "Surreal hidden-portal supermarket and immersive art playground. Note: narrow dark stairs/crawls and loud lighting inside Omega Mart are tough with two 2–3yo toddlers—ideal for 3–4 adults during midday nap!",
+    proTip: "Only 15 mins from The Cliffs at Peace Canyon, making a 2.5-hour adult outing super easy.",
+    url: "https://area15.com/"
   }
 ];
 
 export const DEFAULT_CHECKLIST = [
   {
     id: "chk-1",
-    category: "Urgent Bookings",
-    text: "Book Group Thanksgiving Dinner for Thursday, Nov 26 (Maggiano's Summerlin, Carmine's, STRIPSTEAK, or Summer House Durango)",
+    category: "Mom & Group Timing",
+    text: "Confirm Mom's exact Thu Nov 26 arrival & Fri Nov 27 departure flight times so airport pickup + Friday farewell brunch are locked in",
     done: false
   },
   {
     id: "chk-2",
     category: "Urgent Bookings",
-    text: "Reserve Rental Car / Minivan / 3-Row SUV for Thu Nov 26 – Mon Nov 30 (The Cliffs at Peace Canyon is 25 mins west of the Strip/LAS)",
+    text: "Decide Thu Nov 26 Thanksgiving Meal for 9 (7 Adults + 2 High Chairs): Pre-order catering for Sisters' house / 2BR condo OR book 4:45–5:15 PM table at Maggiano's Summerlin / Summer House Durango",
     done: false
   },
   {
     id: "chk-3",
     category: "Urgent Bookings",
-    text: "Book Red Rock Canyon timed-entry vehicle pass on Recreation.gov ($2) for Friday, Nov 27 or Saturday, Nov 28",
+    text: "Reserve 1 Compact/Midsize SUV for Thu Nov 26 – Mon Nov 30 (Sisters have local car/seat & Brother is driving his own car!)",
     done: false
   },
   {
     id: "chk-4",
-    category: "Flight Prep",
-    text: "Set alarm for Tue, Nov 24 at 5:20 PM PST: Check in for Southwest Flight WN #2386 (Conf #CACD5X)",
+    category: "Urgent Bookings",
+    text: "Book Red Rock Canyon timed-entry passes on Recreation.gov ($2/car) for how many family cars are driving the loop",
     done: false
   },
   {
     id: "chk-5",
     category: "Flight Prep",
-    text: "Verify Maria's seat assignment on United Flight UA 1799 (Conf #L29ERJ) next to Daniel (38C) & Kayden (38B)",
+    text: "Set alarm for Tue, Nov 24 at 5:20 PM PST: Check in for Southwest Flight WN #2386 (Conf #CACD5X — Daniel, Maria & Kayden)",
     done: false
   },
   {
     id: "chk-6",
     category: "Flight Prep",
-    text: "Check United Basic Economy bag sizes for Mon Nov 30 return (9\"×10\"×17\" personal item rule; pre-pay checked bag if bringing roller bags)",
+    text: "Verify Maria's seat assignment on United Flight UA 1799 (Conf #L29ERJ) next to Daniel (38C) & Kayden (38B)",
     done: false
   },
   {
     id: "chk-7",
-    category: "Hotel & Resort",
-    text: "Call Homewood Suites (702-407-0075) upon landing at LAS (Wed Nov 25, 6:55 PM) for complimentary airport shuttle",
+    category: "Flight Prep",
+    text: "Check United Basic Economy bag sizes for Mon Nov 30 return (car seat & stroller fly FREE; adult personal items max 9\"×10\"×17\" unless checking bags)",
     done: false
   },
   {
     id: "chk-8",
     category: "Hotel & Resort",
-    text: "Bring physical credit card + photo ID for The Cliffs at Peace Canyon check-in (Thu Nov 26, 4:00 PM; $150 refundable deposit + $40 resort fee)",
+    text: "Coordinate w/ Vegas Sisters for Thu Nov 26 (11 AM – 4 PM) hotel gap so 2yo Kayden can nap & play with his almost-3yo cousin before 4 PM check-in",
     done: false
   },
   {
     id: "chk-9",
-    category: "Kids & Packing",
-    text: "Pack car seats + stroller for Kayden & Leo (plus digital birth certificate / lap-child verification for Leo)",
+    category: "Hotel & Resort",
+    text: "Bring physical credit card + photo ID for The Cliffs at Peace Canyon check-in (Thu Nov 26, 4:00 PM; $150 refundable deposit + $40 resort fee)",
     done: false
   },
   {
     id: "chk-10",
-    category: "Kids & Packing",
-    text: "Pack warm jackets, beanies & layers for 42°F desert nights (Enchant Christmas / Ethel M Cactus Garden)",
+    category: "Toddlers & Packing",
+    text: "Pack Kayden's car seat, stroller + a hip/toddler carrier & small diaper clutch (<16\"×16\"×8\") since Enchant's Light Maze bans strollers & backpacks!",
+    done: false
+  },
+  {
+    id: "chk-11",
+    category: "Toddlers & Packing",
+    text: "Pack warm jackets, beanies & layers for 42°F desert evenings (Sat 6 PM Summerlin Parade, Enchant, or Ethel M Cactus Garden)",
     done: false
   }
 ];
