@@ -19,7 +19,12 @@ export const TRIP_META = {
     lowF: "41°F – 46°F",
     tips: "Bring warm layers/jackets for evening light shows (Enchant Christmas, Ethel M) and morning strolls at Red Rock Canyon."
   },
-  groupSummary: "Peak Group: 9 Total on Thu (7 Adults + 2 Toddlers, ages 2 & ~3) • 8 on Fri–Sun after Mom's flight",
+  sistersHome: {
+    name: "Vegas Sisters' Home (The Gardens at Summerlin South)",
+    address: "10768 Wallflower Ave, Las Vegas, NV 89135",
+    mapsUrl: "https://www.google.com/maps/search/?api=1&query=10768+Wallflower+Ave+Las+Vegas+NV+89135"
+  },
+  groupSummary: "Peak Group: 9 Total on Thu (7 Adults + 2 Toddlers, ages 2 & ~3) • Anchored near 10768 Wallflower Ave (Summerlin 89135)",
   travelers: [
     {
       name: "Daniel Geri, Maria Cavicchi, Kayden (2yo) + Pomeranian 🐾",
@@ -37,19 +42,19 @@ export const TRIP_META = {
       name: "Brother (James Geri)",
       role: "Driving In (1)",
       email: "jamesgeri1@gmail.com",
-      tags: ["Drives in Thu 11/26", "Departure TBD", "Has Own Car • Cliffs 2BR Forwarded"]
+      tags: ["Drives in Thu 11/26", "Departure TBD", "Has Own Car • Flexible Room"]
     },
     {
       name: "Vegas Sister #1",
-      role: "Las Vegas Local (1)",
-      email: "Lives in Vegas w/ Sister #2",
-      tags: ["Local Vegas Household", "Has Local Car", "All Weekend"]
+      role: "Summerlin Host (1)",
+      email: "10768 Wallflower Ave, Las Vegas, NV 89135",
+      tags: ["The Gardens (Summerlin 89135)", "Has Local Car", "All Weekend"]
     },
     {
       name: "Vegas Sister #2, Partner & Toddler (Almost 3yo)",
-      role: "Las Vegas Local Family (3)",
-      email: "Lives in Vegas w/ Sister #1",
-      tags: ["2 Adults + Almost-3yo Cousin", "Has Local Car & Car Seat", "Toddler Playmate for Kayden!"]
+      role: "Summerlin Host Family (3)",
+      email: "10768 Wallflower Ave, Las Vegas, NV 89135",
+      tags: ["2 Adults + Almost-3yo Cousin", "The Gardens (Summerlin 89135)", "Playmate for Kayden!"]
     }
   ]
 };
@@ -187,82 +192,82 @@ export const CONFIRMED_BOOKINGS = [
 
 export const DOG_FRIENDLY_2BR_ALTERNATIVES = [
   {
-    id: "alt-homewood-airport",
-    rank: "#1 Zero-Move Pick",
-    name: "Homewood Suites by Hilton Las Vegas Airport (Stay Where You Already Are!)",
-    address: "230 Hidden Well Rd, Las Vegas, NV 89119",
-    driveToWestVegas: "12 mins to Durango Resort • 17 mins to Downtown Summerlin (via I-215 W)",
-    suiteLayout: "Two-Bedroom / Two-Bath Suite (1 King + 2 Queens + Sofa Bed + Full Kitchen)",
-    petPolicy: "$50 total (1–4 nights) or $75 total (5+ nights) — only +$25 extra over your Night 1 fee! Up to 2 dogs ≤100 lbs.",
-    extraFees: "$0 Resort Fee • FREE Self-Parking (2 cars) • FREE Daily Hot Breakfast",
-    estNightlyRate: "~$240–$360/night",
-    whyPick: "Zero Thursday hotel switch! Move straight from your Night 1 Studio into a 2BR/2BA Suite in the same building, save on second pet fees, and get free parking for both your SUV and your brother's car.",
-    url: "https://www.hilton.com/en/hotels/lasafhw-homewood-suites-las-vegas-airport/"
+    id: "alt-element-summerlin",
+    rank: "#1 Closest to Sister (3–4 Mins / 1.2 Mi!)",
+    name: "Element by Westin Las Vegas Summerlin (Same 89135 Zip Code!)",
+    address: "10555 Discovery Dr, Las Vegas, NV 89135",
+    driveToWestVegas: "3–4 mins (1.2 mi) to 10768 Wallflower Ave • 5 mins to Downtown Summerlin",
+    suiteLayout: "1-Bedroom Suite w/ Full Kitchen (King + Living Room Sofa Bed) + Connecting/Adjacent Studio for Brother!",
+    petPolicy: "$50/night capped at $150 max per stay • Up to 2 dogs ≤40 lbs (1st-floor pet suites w/ easy outdoor grass walkout!).",
+    extraFees: "$0 Resort Fee • FREE Self-Parking • FREE Daily Hot Breakfast",
+    estNightlyRate: "~$170–$220/night per suite (~$340–$420 for 2 rooms)",
+    whyPick: "Zero Summerlin hotels have a single-key dog-friendly 2BR, making THIS the #1 Summerlin hack: you're 3 mins from your sisters' house (closer than Cliffs at Peace Canyon!), you get a closed bedroom door + full kitchen for Kayden & your Pom, AND since you're unsure when your brother leaves, he only pays for the exact nights he stays (or crashes at your sisters' 3 mins away)!",
+    url: "https://www.marriott.com/en-us/hotels/lasel-element-las-vegas-summerlin/overview/"
+  },
+  {
+    id: "alt-home2-sunset",
+    rank: "#2 Closest All-Suite Hilton (10 Mins via 215)",
+    name: "Home2 Suites by Hilton Las Vegas Southwest I-215 Curve",
+    address: "8470 W Sunset Rd, Las Vegas, NV 89113",
+    driveToWestVegas: "10 mins (5.8 mi) to 10768 Wallflower Ave • Right across from Durango Resort!",
+    suiteLayout: "1-Bedroom Kitchenette Suite + Adjoining Studio Option (Full Fridge, Dishwasher, Microwave, Sofa Bed)",
+    petPolicy: "$75 flat fee (1–4 nights) • Up to 2 dogs ≤75 lbs.",
+    extraFees: "$0 Resort Fee • FREE Self-Parking • FREE Daily Hot Breakfast",
+    estNightlyRate: "~$155–$210/night per suite",
+    whyPick: "Straight 2-exit hop down the 215 Beltway from your sisters' Town Center Dr exit, lower flat $75 pet fee, and right next to Durango Resort's Eat Your Heart Out Food Hall & Summer House.",
+    url: "https://www.hilton.com/en/hotels/lasswht-home2-suites-las-vegas-southwest-i-215-curve/"
+  },
+  {
+    id: "alt-hampton-summerlin",
+    rank: "#3 9 Mins to Sister (1 Block from Cliffs)",
+    name: "Hampton Inn & Suites Las Vegas-Red Rock/Summerlin",
+    address: "4280 S Grand Canyon Dr, Las Vegas, NV 89147",
+    driveToWestVegas: "9 mins (4.0 mi) to 10768 Wallflower Ave • Same street as Cliffs at Peace Canyon",
+    suiteLayout: "King Studio Suite + Adjacent Room for Brother (Mini-fridge/microwave; note connecting doors aren't pre-guaranteed)",
+    petPolicy: "$75 flat fee (1–4 nights) • Up to 2 pets ≤75 lbs.",
+    extraFees: "$0 Resort Fee • FREE Self-Parking • FREE Daily Hot Breakfast",
+    estNightlyRate: "~$145–$190/night per room",
+    whyPick: "Literally 0.3 miles up the street from your original Cliffs at Peace Canyon booking, dog-friendly ($75 flat fee), and under 10 minutes to 10768 Wallflower Ave.",
+    url: "https://www.hilton.com/en/hotels/lasrrhx-hampton-suites-las-vegas-red-rock-summerlin/"
   },
   {
     id: "alt-residence-stadium",
-    rank: "#2 Closest Modern 2BR to West Vegas",
-    name: "Residence Inn by Marriott Las Vegas Stadium Area",
+    rank: "#4 Closest TRUE Single-Key 2BR Suite (15 Mins)",
+    name: "Residence Inn Las Vegas Stadium Area (or Staybridge Suites Next Door)",
     address: "5875 Dean Martin Dr, Las Vegas, NV 89118",
-    driveToWestVegas: "11 mins to Durango Resort • 15 mins to Downtown Summerlin",
-    suiteLayout: "Two-Bedroom / Two-Bath Suite (Full Kitchen, Separate Living Area)",
-    petPolicy: "$100 flat fee per stay (up to 2 dogs ≤75 lbs).",
-    extraFees: "$0 Resort Fee • ~$20/day parking • FREE Daily Hot Breakfast",
-    estNightlyRate: "~$250–$380/night",
-    whyPick: "Newer, smoke-free, non-gaming property right by the I-15 / I-215 West ramp—super fast straight shot west to Summerlin and Spring Valley.",
+    driveToWestVegas: "15 mins (11.5 mi via 215 Beltway) to 10768 Wallflower Ave",
+    suiteLayout: "TRUE Two-Bedroom / Two-Bath Apartment Suite under 1 Key (Full Kitchen + Separate Living Room)",
+    petPolicy: "$100 flat fee at Residence Inn (≤75 lbs) • $75 flat fee at Staybridge next door (≤30 lbs).",
+    extraFees: "$0 Resort Fee (Residence Inn) • ~$20/day parking • FREE Hot Breakfast",
+    estNightlyRate: "~$250–$380/night (for 1 shared 2BR/2BA suite)",
+    whyPick: "Because every casino & timeshare inside Summerlin bans pets, this I-215/I-15 hub is the closest true locked-off 2-Bedroom / 2-Bath hotel suite under a single key—straight shot west up the 215 Beltway to Wallflower Ave.",
     url: "https://www.marriott.com/en-us/hotels/lasra-residence-inn-las-vegas-stadium-area/overview/"
   },
   {
     id: "alt-homewood-city-center",
-    rank: "#3 Best Value Pet Fee (West of I-15)",
+    rank: "#5 True 2BR/2BA Suite ($75 Pet Fee • 16 Mins)",
     name: "Homewood Suites by Hilton Las Vegas City Center",
     address: "4625 Dean Martin Dr, Las Vegas, NV 89103",
-    driveToWestVegas: "13 mins to Peace Canyon / Spring Valley • 16 mins to Downtown Summerlin",
-    suiteLayout: "Two-Bedroom / Two-Bath Suite (Full Kitchen, Living Room, Sofa Sleeper)",
+    driveToWestVegas: "16 mins (10.5 mi via Flamingo or I-215) to 10768 Wallflower Ave",
+    suiteLayout: "TRUE Two-Bedroom / Two-Bath Suite (Full Kitchen, Living Room, Sofa Sleeper)",
     petPolicy: "$75 flat fee per stay (up to 2 pets ≤75 lbs).",
     extraFees: "$0 Resort Fee • $20/day garage parking • FREE Daily Hot Breakfast",
-    estNightlyRate: "~$220–$350/night",
-    whyPick: "Lowest flat pet fee ($75) outside your Night 1 hotel, spacious residential 2BR layout, and easy straight shot west down Flamingo or Tropicana to your sisters' side of town.",
+    estNightlyRate: "~$220–$350/night (for 1 shared 2BR/2BA suite)",
+    whyPick: "Great value true 2BR/2BA Hilton suite with full stove/fridge/dishwasher and a low $75 flat pet fee.",
     url: "https://www.hilton.com/en/hotels/lasccwh-homewood-suites-las-vegas-city-center/"
   },
   {
-    id: "alt-staybridge-stadium",
-    rank: "#4 Condo-Style Tower w/ Balcony Option",
-    name: "Staybridge Suites Las Vegas – Stadium District (by IHG)",
-    address: "5735 Dean Martin Dr, Las Vegas, NV 89118",
-    driveToWestVegas: "11 mins to Durango Resort • 15 mins to Downtown Summerlin",
-    suiteLayout: "Two-Bedroom / Two-Bath Apartment Suite (Full Kitchen + Optional Balcony + Free Laundry)",
-    petPolicy: "$75 flat fee (1–6 nights) • Dogs up to 30 lbs (perfect for a Pomeranian; crate/accompanied rule applies).",
-    extraFees: "~$0–$25 amenity fee (varies by rate) • $20/day guest parking • FREE Hot Breakfast & Free Guest Laundry",
-    estNightlyRate: "~$240–$370/night",
-    whyPick: "Feels closest to a modern high-rise condo with free on-site laundry machines (huge with a 2-year-old!) and optional private balconies.",
-    url: "https://www.ihg.com/staybridge/hotels/us/en/las-vegas/lasst/hoteldetail"
-  },
-  {
-    id: "alt-residence-airport-south",
-    rank: "#5 Quiet South Beltway / Town Square Pick",
-    name: "Residence Inn Las Vegas Airport (South Las Vegas Blvd)",
-    address: "7690 S Las Vegas Blvd, Las Vegas, NV 89123",
-    driveToWestVegas: "12 mins to Durango Resort • 16 mins to Summerlin South",
-    suiteLayout: "Two-Bedroom / Two-Bath Suite (Full Kitchen, Fireplace in Select Suites)",
-    petPolicy: "$150 flat fee per stay • Max 25 lbs per pet (easy for a 4–7 lb Pomeranian!).",
-    extraFees: "$0 Resort Fee • FREE Hot Breakfast • Walkable to Town Square & PopStroke!",
-    estNightlyRate: "~$230–$350/night",
-    whyPick: "Low-rise residential village layout (1st-floor suites open right onto grassy dog-walking paths!) across from Town Square.",
-    url: "https://www.marriott.com/en-us/hotels/lasap-residence-inn-las-vegas-airport/overview/"
-  },
-  {
-    id: "alt-trump-penthouse",
-    rank: "#6 Luxury Non-Gaming Upgrade (Unattended Dogs Allowed!)",
-    name: "Trump International Hotel Las Vegas — 2BR Penthouse Suite",
-    address: "2000 Fashion Show Dr, Las Vegas, NV 89109",
-    driveToWestVegas: "17 mins to Downtown Summerlin",
-    suiteLayout: "Luxury Two-Bedroom Penthouse Suite (Sub-Zero/Wolf Full Kitchen, Dining Room, 2.5 Baths)",
-    petPolicy: "$125 flat fee per stay ('Trump Pets' ≤25 lbs — includes dog bed/bowls AND allows well-behaved dogs left unattended in suite!)",
-    extraFees: "Resort fee applies • 100% Smoke-Free & Non-Gaming",
-    estNightlyRate: "~$450–$700+/night",
-    whyPick: "Unlike extended-stay hotels (which require crating/accompanying pets) or Vdara ($200/night pet fee!), this allows your Pom to relax unattended in the suite while you visit Enchant Christmas or Discovery Museum.",
-    url: "https://www.trumphotels.com/las-vegas"
+    id: "alt-homewood-airport",
+    rank: "#6 Zero-Move True 2BR/2BA (17 Mins All-Freeway)",
+    name: "Homewood Suites by Hilton Las Vegas Airport (Your Night 1 Hotel!)",
+    address: "230 Hidden Well Rd, Las Vegas, NV 89119",
+    driveToWestVegas: "17 mins (14.5 mi straight up the 215 Beltway) to 10768 Wallflower Ave",
+    suiteLayout: "TRUE Two-Bedroom / Two-Bath Suite (1 King + 2 Queens + Sofa Bed + Full Kitchen)",
+    petPolicy: "$75 total for ALL 5 NIGHTS (only +$25 extra over the $50 fee you already pay Night 1!).",
+    extraFees: "$0 Resort Fee • FREE Parking (2 cars) • FREE Hot Breakfast",
+    estNightlyRate: "~$240–$360/night (for 1 shared 2BR/2BA suite)",
+    whyPick: "Zero Thursday hotel switch, free parking for both cars, lowest incremental pet fee (+$25), and 100% freeway drive up the 215 Beltway right to your sisters' Town Center Dr exit.",
+    url: "https://www.hilton.com/en/hotels/lasafhw-homewood-suites-las-vegas-airport/"
   }
 ];
 
@@ -420,10 +425,10 @@ export const ITINERARY_DAYS = [
       {
         id: "it-5",
         time: "11:30 AM – 3:15 PM",
-        title: "Head to Sisters' Vegas House for Toddler Nap, Cousin Play & Mom/Brother Arrivals",
+        title: "Head to Sisters' House (10768 Wallflower Ave, Summerlin) for Nap, Cousin Play & Arrivals",
         type: "suggested",
-        location: "Vegas Sisters' Home (or scoop Mom up at LAS on your way!)",
-        note: "BEST MOVE for the 11 AM–4 PM hotel gap: Kayden (2yo) gets a real midday nap & plays with his almost-3yo cousin, Mom lands at LAS, and Brother can drive straight in without I-15 timing stress!"
+        location: "10768 Wallflower Ave, Las Vegas, NV 89135 (The Gardens at Summerlin South)",
+        note: "BEST MOVE for the 11 AM–4 PM hotel gap: Kayden (2yo) gets a real midday nap & plays with his almost-3yo cousin (plus The Gardens Park tot-lot & dog lawn right around the corner!), Mom lands at LAS, and Brother drives straight in!"
       },
       {
         id: "it-6",
