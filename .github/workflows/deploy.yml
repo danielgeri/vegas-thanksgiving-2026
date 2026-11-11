@@ -23,12 +23,24 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
+      - name: Stamp commit version into Service Worker & HTML
+        env:
+          FULL_SHA: ${{ github.sha }}
+        run: |
+          SHORT_SHA="${FULL_SHA:0:7}"
+          BUILD_DATE="$(date -u +'%b %d, %Y %H:%M UTC')"
+          sed -i "s/__BUILD_VERSION__/${SHORT_SHA}/g" sw.js index.html
+          sed -i "s/__BUILD_DATE__/${BUILD_DATE}/g" index.html
+
       - name: Setup Pages
         uses: actions/configure-pages@v5
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: "."
+
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4

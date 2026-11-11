@@ -35,13 +35,43 @@ function saveCustomPlans() {
 
 function showToast(message) {
   const toast = document.getElementById("toast");
-  if (!toast) return;
+  if (!toast || showToast._persistent) return;
   toast.textContent = message;
   toast.hidden = false;
   clearTimeout(showToast._timer);
   showToast._timer = setTimeout(() => {
     toast.hidden = true;
   }, 2600);
+}
+
+function showUpdateBanner(version) {
+  const toast = document.getElementById("toast");
+  if (!toast) return;
+  clearTimeout(showToast._timer);
+  showToast._persistent = true;
+  toast.innerHTML = "";
+
+  const label = document.createElement("span");
+  label.textContent = `✨ Trip app updated (${version}) — ready to refresh`;
+
+  const btn = document.createElement("button");
+  btn.type = "button";
+  btn.className = "btn btn-primary btn-sm";
+  btn.textContent = "Refresh Now";
+  btn.addEventListener("click", () => {
+    window.location.reload();
+  });
+
+  toast.append(label, btn);
+  toast.hidden = false;
+}
+
+function isUserBusy() {
+  if (document.querySelector("dialog[open]")) return true;
+  const active = document.activeElement;
+  if (!active) return false;
+  const tag = active.tagName;
+  return tag === "INPUT" || tag === "TEXTAREA" || tag === "SELECT";
 }
 
 function escapeHtml(str) {
@@ -770,13 +800,121 @@ function setupInteractions() {
   }
 }
 
-/* --- Service Worker Registration --- */
+/* --- Service Worker & Auto-Update Lifecycle --- */
 function registerServiceWorker() {
-  if ("serviceWorker" in navigator) {
-    window.addEventListener("load", () => {
-      navigator.serviceWorker.register("./sw.js").catch(() => {});
-    });
+  const pageVersion =
+    document.querySelector('meta[name="app-version"]')?.content || "__BUILD_VERSION__";
+  const buildInfoEl = document.getElementById("app-build-info");
+  const statusDotEl = document.getElementById("network-status-dot");
+  const statusLabelEl = document.getElementById("network-status-label");
+  const checkUpdateBtn = document.getElementById("check-update-btn");
+
+  if (buildInfoEl && pageVersion === "__BUILD_VERSION__") {
+    buildInfoEl.textContent = "Local Dev Build";
   }
+
+  function syncConnectivityIndicator() {
+    const online = navigator.onLine;
+    if (statusDotEl) statusDotEl.classList.toggle("offline", !online);
+    if (statusLabelEl) {
+      statusLabelEl.textContent = online
+        ? "Online • Auto-updates active"
+        : "Offline • Saved on device";
+    }
+  }
+
+  syncConnectivityIndicator();
+  window.addEventListener("online", syncConnectivityIndicator);
+  window.addEventListener("offline", syncConnectivityIndicator);
+
+  if (!("serviceWorker" in navigator)) return;
+
+  let refreshing = false;
+
+  function handleIncomingVersion(incomingVersion) {
+    if (
+      !incomingVersion ||
+      pageVersion === "__BUILD_VERSION__" ||
+      incomingVersion === "__BUILD_VERSION__" ||
+      incomingVersion === pageVersion
+    ) {
+      return false;
+    }
+    if (isUserBusy()) {
+      showUpdateBanner(incomingVersion);
+    } else if (!refreshing) {
+      refreshing = true;
+      window.location.reload();
+    }
+    return true;
+  }
+
+  navigator.serviceWorker.addEventListener("message", (event) => {
+    const type = event.data?.type;
+    if (type === "SW_ACTIVATED" || type === "SW_VERSION") {
+      handleIncomingVersion(event.data.version);
+    }
+  });
+
+  window.addEventListener("load", async () => {
+    try {
+      const reg = await navigator.serviceWorker.register("./sw.js", {
+        updateViaCache: "none"
+      });
+
+      if (reg.waiting) {
+        reg.waiting.postMessage({ type: "SKIP_WAITING" });
+      }
+      reg.active?.postMessage({ type: "GET_VERSION" });
+
+      const checkSilently = () => {
+        if (!navigator.onLine) return;
+        reg.update().catch(() => {});
+        reg.active?.postMessage({ type: "GET_VERSION" });
+      };
+
+      document.addEventListener("visibilitychange", () => {
+        if (document.visibilityState === "visible") checkSilently();
+      });
+      window.addEventListener("online", checkSilently);
+      setInterval(checkSilently, 5 * 60 * 1000);
+
+      if (checkUpdateBtn) {
+        checkUpdateBtn.addEventListener("click", async () => {
+          if (!navigator.onLine) {
+            showToast("Offline — using saved trip copy");
+            return;
+          }
+          checkUpdateBtn.disabled = true;
+          let updateDetected = false;
+          const onUpdateFound = () => {
+            updateDetected = true;
+          };
+          reg.addEventListener("updatefound", onUpdateFound);
+          try {
+            await reg.update();
+            if (reg.waiting) {
+              updateDetected = true;
+              reg.waiting.postMessage({ type: "SKIP_WAITING" });
+            }
+            reg.active?.postMessage({ type: "GET_VERSION" });
+            if (updateDetected || reg.installing) {
+              showToast("Downloading latest trip update…");
+            } else {
+              showToast("You're on the latest version ✓");
+            }
+          } catch {
+            showToast("Could not check for updates right now");
+          } finally {
+            reg.removeEventListener("updatefound", onUpdateFound);
+            checkUpdateBtn.disabled = false;
+          }
+        });
+      }
+    } catch {
+      // Graceful fallback if Service Workers are blocked in private browsing
+    }
+  });
 }
 
 document.addEventListener("DOMContentLoaded", () => {

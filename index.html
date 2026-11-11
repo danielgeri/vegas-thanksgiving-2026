@@ -6,6 +6,7 @@
   <title>Vegas Thanksgiving 2026 — Geri Family &amp; Group Trip Hub</title>
   <meta name="description" content="Offline-ready Progressive Web App for the Geri Family Thanksgiving 2026 trip to Las Vegas (Nov 25–30, 2026): flights, hotels, itinerary, large-group restaurants, and events.">
   <meta name="theme-color" content="#0c0f17">
+  <meta name="app-version" content="__BUILD_VERSION__">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="apple-mobile-web-app-title" content="Vegas '26">
@@ -230,6 +231,18 @@
         </div>
       </main>
     </div>
+
+    <footer class="app-footer">
+      <div class="footer-meta">
+        <span class="status-dot" id="network-status-dot" aria-hidden="true"></span>
+        <span id="network-status-label">Offline-ready PWA</span>
+        <span aria-hidden="true">•</span>
+        <span id="app-build-info">Build __BUILD_VERSION__ • __BUILD_DATE__</span>
+      </div>
+      <button type="button" class="btn btn-sm" id="check-update-btn">
+        🔄 Check for Updates
+      </button>
+    </footer>
   </div>
 
   <!-- Native Modal Dialog: Add Custom Plan to Itinerary -->
