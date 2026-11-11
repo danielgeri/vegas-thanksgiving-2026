@@ -11,17 +11,24 @@ import {
 
 const STORAGE_KEYS = {
   favorites: "vegas2026_favorites_v1",
-  checklist: "vegas2026_checklist_v2",
+  checklist: "vegas2026_checklist_v3",
   customPlans: "vegas2026_custom_plans_v1",
   theme: "vegas2026_theme_v1"
 };
 
 function loadChecklist() {
-  const savedV2 = JSON.parse(localStorage.getItem(STORAGE_KEYS.checklist) || "null");
-  if (savedV2) return savedV2;
-  const legacyV1 = JSON.parse(localStorage.getItem("vegas2026_checklist_v1") || "[]");
-  const customItems = legacyV1.filter((item) => String(item.id).startsWith("custom-"));
-  return [...customItems, ...structuredClone(DEFAULT_CHECKLIST)];
+  const savedV3 = JSON.parse(localStorage.getItem(STORAGE_KEYS.checklist) || "null");
+  if (savedV3) return savedV3;
+  const legacy =
+    JSON.parse(localStorage.getItem("vegas2026_checklist_v2") || "null") ||
+    JSON.parse(localStorage.getItem("vegas2026_checklist_v1") || "[]");
+  const doneIds = new Set(legacy.filter((item) => item.done).map((item) => item.id));
+  const customItems = legacy.filter((item) => String(item.id).startsWith("custom-"));
+  const mergedDefaults = structuredClone(DEFAULT_CHECKLIST).map((item) => ({
+    ...item,
+    done: doneIds.has(item.id)
+  }));
+  return [...customItems, ...mergedDefaults];
 }
 
 let favorites = new Set(JSON.parse(localStorage.getItem(STORAGE_KEYS.favorites) || "[]"));
@@ -217,12 +224,14 @@ function renderBookings() {
          <button type="button" class="btn btn-sm" data-toggle-pin="${b.id}">Show PIN</button>`
       : `<span class="code-val">${escapeHtml(b.secondaryCode)}</span>`;
 
+    const statusBadgeClass = b.status.includes("NO PETS") ? "badge-rose" : "badge-emerald";
+
     return `
       <article class="card">
         <header>
           <div class="card-badges">
             <span class="badge ${badgeClass}">${escapeHtml(b.badge)}</span>
-            <span class="badge badge-emerald">${escapeHtml(b.status)}</span>
+            <span class="badge ${statusBadgeClass}">${escapeHtml(b.status)}</span>
           </div>
           <h3>${escapeHtml(b.title)}</h3>
           <p class="stat-meta">${escapeHtml(b.subtitle)}</p>

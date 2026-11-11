@@ -22,10 +22,10 @@ export const TRIP_META = {
   groupSummary: "Peak Group: 9 Total on Thu (7 Adults + 2 Toddlers, ages 2 & ~3) • 8 on Fri–Sun after Mom's flight",
   travelers: [
     {
-      name: "Daniel Geri, Maria Cavicchi & Kayden (Age 2)",
-      role: "Bay Area Core Family (3)",
+      name: "Daniel Geri, Maria Cavicchi, Kayden (2yo) + Pomeranian 🐾",
+      role: "Bay Area Core Family (3 + Dog)",
       email: "danielgeri@gmail.com • mcav6487@gmail.com",
-      tags: ["Wed 11/25 – Mon 11/30", "SFO ⇄ LAS (3 Seats)", "Homewood Suites → Cliffs 2BR"]
+      tags: ["Wed 11/25 – Mon 11/30", "SFO ⇄ LAS (+ In-Cabin Pet)", "⚠️ Check Main Resort Pet Rule!"]
     },
     {
       name: "Mom",
@@ -75,9 +75,9 @@ export const CONFIRMED_BOOKINGS = [
       { name: "Kayden Geri (Age 2)", ticket: "5262418858457", seat: "Own Ticketed Seat" }
     ],
     highlights: [
-      "Check-in opens 24h prior: Tuesday, Nov 24, 2026 at 5:20 PM PST (must check in ≥30 mins before departure).",
-      "Basic Fare baggage: Includes 1 standard carry-on + 1 personal item per ticketed passenger.",
-      "Cancellation rule: Cancel at least 10 minutes prior to scheduled departure or points/funds may be forfeited."
+      "🐾 POMERANIAN FLIGHT RULE: Call Southwest NOW (1-800-435-9792) to reserve 1 of ~6 cabin pet spots on #CACD5X! Fee is $125 one-way paid at the SFO ticket counter (max carrier 18.5\"×13.5\"×9.5\" under seat).",
+      "Check-in opens 24h prior: Tuesday, Nov 24, 2026 at 5:20 PM PST (must check in at counter on travel day with pet carrier).",
+      "Basic Fare baggage: Includes 1 standard carry-on + 1 personal item per ticketed passenger (pet carrier counts as either carry-on or personal item)."
     ],
     icsEvent: {
       title: "✈️ Flight to Vegas — Southwest WN 2386 (Conf #CACD5X)",
@@ -91,7 +91,7 @@ export const CONFIRMED_BOOKINGS = [
     id: "hotel-night1",
     type: "hotel",
     badge: "Night 1 Hotel (Nov 25–26)",
-    status: "Confirmed • Paid",
+    status: "Confirmed • ✅ Dog Friendly ($50 Fee)",
     title: "Homewood Suites by Hilton Las Vegas Airport",
     subtitle: "Check-in Wed, Nov 25 (3:00 PM) → Check-out Thu, Nov 26 (11:00 AM)",
     confirmationCode: "73585813376033",
@@ -101,13 +101,13 @@ export const CONFIRMED_BOOKINGS = [
     provider: "Expedia.com",
     location: "230 Hidden Well Rd, Las Vegas, NV 89119",
     mapsUrl: "https://www.google.com/maps/search/?api=1&query=Homewood+Suites+by+Hilton+Las+Vegas+Airport+230+Hidden+Well+Rd+Las+Vegas+NV+89119",
-    priceSummary: "$86.19 Total Paid ($105.40 room + $13.70 tax − $32.91 OneKeyCash)",
+    priceSummary: "$86.19 Total Paid (+ $50 Pet Fee at Front Desk)",
     passengers: [
-      { name: "Daniel, Maria + 2yo Kayden (Booked as 2A + 1 Child/Infant)", ticket: "Studio Suite, 1 King Bed with Sofa Bed, Kitchen", seat: "1 Night" }
+      { name: "Daniel, Maria, 2yo Kayden + Pomeranian 🐾", ticket: "Studio Suite, 1 King Bed with Sofa Bed, Kitchen", seat: "1 Night" }
     ],
     highlights: [
-      "Complimentary Airport Shuttle: Property offers transfers from LAS airport. Call (702) 407-0075 with arrival details upon landing at 6:55 PM.",
-      "Check-in window runs 3:00 PM to 2:00 AM. Includes Free High-Speed Internet & in-suite kitchen.",
+      "✅ DOG FRIENDLY: Welcomes up to 2 dogs (up to 100 lbs) for a $50 flat non-refundable fee (1–4 nights). Call (702) 407-0075 ahead so they assign a designated pet-friendly suite!",
+      "Complimentary Airport Shuttle: Ask when calling (702) 407-0075 if crated Pomeranians are allowed on the shuttle, or take a 5-minute Uber Pet from LAS.",
       "Rate is non-refundable. Check-out is Thursday, Nov 26 at 11:00 AM."
     ],
     icsEvent: {
@@ -122,7 +122,7 @@ export const CONFIRMED_BOOKINGS = [
     id: "hotel-main",
     type: "resort",
     badge: "Main Group Resort (Nov 26–30 • 4 Nights)",
-    status: "Confirmed • Free Cancel until 11/26 2PM",
+    status: "🚨 NO PETS ALLOWED • Free Cancel until 11/26 2PM",
     title: "The Cliffs at Peace Canyon",
     subtitle: "Check-in Thu, Nov 26 (4:00 PM) → Check-out Mon, Nov 30 (10:00 AM)",
     confirmationCode: "5477904180",
@@ -133,15 +133,15 @@ export const CONFIRMED_BOOKINGS = [
     provider: "Booking.com (Managed by Berkley Las Vegas Management Team)",
     location: "4550 South Grand Canyon Drive, Las Vegas, NV 89147",
     mapsUrl: "https://www.google.com/maps/search/?api=1&query=The+Cliffs+at+Peace+Canyon+4550+South+Grand+Canyon+Drive+Las+Vegas+NV+89147",
-    priceSummary: "$1,249.67 Total ($1,147.11 unit + $154.32 tax + $40 resort fee − $91.77 Booking.com credit)",
+    priceSummary: "$1,249.67 Total ($0 paid yet • Free Cancel until Nov 26 @ 2:00 PM)",
     passengers: [
       { name: "Daniel Geri (Booked for 4 Adults)", ticket: "Two-Bedroom Unit (Full Kitchen, Living Room, Washer/Dryer)", seat: "4 Nights" },
       { name: "Forwarded to James Geri (jamesgeri1@gmail.com)", ticket: "Group Basecamp in Summerlin South", seat: "Shared Comms" }
     ],
     highlights: [
+      "🚨 STRICT NO-PETS POLICY: Vacation Village / The Cliffs at Peace Canyon strictly prohibits pet dogs (ADA service animals only). Either have your Pomeranian stay overnight at your Vegas sisters' house OR use your $0 free cancellation to switch to a dog-friendly 2BR suite (e.g., Homewood Suites City Center, Residence Inn Hughes Center, Element Summerlin, or a dog-friendly Summerlin Airbnb)!",
       "Free Cancellation until Thursday, Nov 26, 2026 at 2:00 PM PST ($0). After 2:00 PM on Nov 26, cancellation fee is $370.14.",
-      "Payment & Deposit: Scheduled automatic charge via Booking.com ($1,249.66). Property invoice shows $1,341.43 (Booking.com pays $91.77). A $150 refundable damage deposit on credit card + $40 resort fee due at check-in.",
-      "Security notice from Berkley Las Vegas Management: Property NEVER contacts guests via WhatsApp or SMS for payment links—only communicate via Booking.com or call +1 (702) 248-3570."
+      "Payment & Deposit: Scheduled automatic charge via Booking.com ($1,249.66). A $150 refundable damage deposit + $40 resort fee due at check-in."
     ],
     icsEvent: {
       title: "🏜️ Check-in: The Cliffs at Peace Canyon (Booking.com #5477904180)",
@@ -171,9 +171,9 @@ export const CONFIRMED_BOOKINGS = [
       { name: "Maria Cavicchi", ticket: "eTicket 0162156530169", seat: "Check United App (Family Seating)" }
     ],
     highlights: [
-      "Family Seat Update (Email #1a1c8bf20f1f8222): United automatically assigned Daniel (38C Aisle) and Kayden (38B Middle) together; verify Maria's adjacent seat in the United app.",
-      "⚠️ Basic Economy Bag Policy: Personal item only (9\" × 10\" × 17\" under-seat) unless MileagePlus Premier or qualifying United cardmember. Full-size carry-ons are NOT permitted at gate ($75 gate fee); check bags before security ($45–$50 1st bag).",
-      "Airport Cutoff: Checked bags and boarding passes must be completed at least 45 minutes before departure (by 12:46 PM PST)."
+      "🐾 POMERANIAN BASIC ECONOMY RULE: Add your pet NOW in United 'My Trips' (#L29ERJ) before cabin pet slots sell out ($150 fee). ⚠️ On Basic Economy, your under-seat pet carrier (max 18\"×11\"×11\" soft-sided) REPLACES that passenger's 1 allowed personal item—so that adult cannot bring a separate backpack/purse through the gate!",
+      "Family Seat Update (Email #1a1c8bf20f1f8222): Daniel (38C Aisle) & Kayden (38B Middle) assigned together; verify Maria's adjacent seat & confirm Row 38 under-seat pet clearance in the United app.",
+      "Airport Cutoff: Pet check-in, checked bags, and boarding passes must be completed at the counter ≥45 minutes before departure (by 12:46 PM PST; arrive by 11:45 AM with a pet!)."
     ],
     icsEvent: {
       title: "✈️ Return Flight — United UA 1799 (Conf #L29ERJ)",
@@ -1035,6 +1035,24 @@ export const ACTIVITIES = [
 ];
 
 export const DEFAULT_CHECKLIST = [
+  {
+    id: "chk-pet-1",
+    category: "🐾 Pomeranian Urgent!",
+    text: "Decide Nights 2–5 (Nov 26–30): The Cliffs at Peace Canyon is STRICTLY NO PETS — either confirm Pomeranian can sleep at Vegas Sisters' house OR free-cancel Cliffs (before 11/26 2PM) & book a dog-friendly 2BR suite!",
+    done: false
+  },
+  {
+    id: "chk-pet-2",
+    category: "🐾 Pomeranian Urgent!",
+    text: "Reserve cabin pet spots NOW before Thanksgiving flights fill up: Call Southwest (1-800-435-9792) for #CACD5X ($125) AND add pet in United App 'My Trips' for #L29ERJ ($150 — replaces 1 adult's personal item!)",
+    done: false
+  },
+  {
+    id: "chk-pet-3",
+    category: "🐾 Pomeranian Urgent!",
+    text: "Call Homewood Suites Las Vegas Airport (702-407-0075) to add Pomeranian to Night 1 Studio Suite ($50 fee) & check shuttle pet rule",
+    done: false
+  },
   {
     id: "chk-1",
     category: "Mom & Group Timing",
